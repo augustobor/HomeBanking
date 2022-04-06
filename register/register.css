@@ -57,9 +57,6 @@ main form .login_input {
     align-items: center;
     height: auto;
     padding: 2rem;
-}
-
-main form .login_input input {
     height: 10rem;
     width: 50rem;
     padding: 1rem;
@@ -69,19 +66,21 @@ main form .login_input input {
     color: var(--just-white);
     outline: none;
     transition: all 0.3s ease-in-out;
+    border-bottom: var(--foxy-orange);
 }
 
-main form .login_input hr {
+
+main form hr {
     border-width: 0.1rem;
     border-radius: 10px;
     border-color: var(--foxy-orange);
+    width: 25%;
 }
 
 
-main form a {
-    text-decoration: none;
-    margin-top: 5rem;
-    height: 5rem;
+main form .login_submit {
+    margin-top: 10rem;
+    height: 8rem;
     width: 20rem;
     background: var(--washed-cyan);
     border-style: none;
@@ -91,6 +90,6 @@ main form a {
     transition: all 0.3s ease-in-out;
 }
 
-main form a:hover {
+main form .login_submit:hover {
     background: var(--foxy-orange);
 }
