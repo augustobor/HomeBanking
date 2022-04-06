@@ -26,11 +26,9 @@
                     if(($conexion->query($query))->num_rows > 0) {
                         echo "<p class='message'>El nombre no se encuentra disponible</p>";
                     } else {
-                        echo "<p class='message'>USUARIO O CONTRASEÑA INCORRECTOS 😯</p>";
+                        header("Location: ../index.php");
+                        die();
                     }
-
-                    window.location.replace("http://localhost/homeBanking/index.php");
-                    die();
                 }
             }
         }

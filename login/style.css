@@ -95,13 +95,17 @@ main form .login_submit:hover {
 }
 
 main form .message {
-    margin: 10rem;
-    background: var(--lazy-white);
+    margin-top: 20rem;
+    background: #cd2a2a;
+    border-style: solid;
+    border-width: 0.4rem;
+    border-color: #690808;
     border-radius: 10px;
     width: 20%;
     padding: 2%;
-    color: var(--just-black);
-    font-size: xx-large;
+    color: var(--just-white);
+    font-weight: bold;
+    font-size: large;
 }
 
 aside {
