@@ -1,0 +1,70 @@
+:root {
+	--blue-sea: #103E55;
+    --just-black: #000000;
+    --dark-vanilla: #7F7C77;
+    --black-dark-vanilla: #403e3c;
+    --just-white: #FAFAFA;
+    --lazy-white: #E6E1DE;
+    --foxy-orange: #FF7F14;
+    --washed-cyan: #4F8BA7;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0; 
+}
+
+html {
+	font-size: 62.5%;
+	font-family: 'inherir', 'Seoge UI', sans-serif;
+	scroll-behavior: smooth; 
+}
+
+
+body {
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+main {
+    background: linear-gradient(180.8deg, var(--blue-sea) 16.69%, var(--just-black) 100%);
+    width: 100%;
+}
+
+
+main .main_exit {
+    text-decoration: none;
+    height: 8rem;
+    width: 20rem;
+    background: var(--washed-cyan);
+    border-style: none;
+    border-radius: 10px;
+    padding: 2%;
+    font-size: x-large;
+    color: var(--just-white);
+    transition: all 0.3s ease-in-out;
+}
+
+main .main_exit:hover {
+    background-color: var(--foxy-orange);
+}
+
+
+main .message {
+    margin: 0 30%;
+    background: #76cd2a;
+    border-style: solid;
+    border-width: 0.4rem;
+    border-color: #075a26;
+    border-radius: 10px;
+    padding: 1%;
+    color: var(--just-white);
+    font-weight: bold;
+    font-size: large;
+}
+

@@ -11,8 +11,6 @@
     <main>
         <h1>Inicia sesión</h1>
 
-        <!-- <?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?> -->
-
         <form action="" class="login" id="login" method="POST">
             <input class="login_input" id="user" type="text" name="user" placeholder="Usuario">
             <hr/>
