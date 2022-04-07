@@ -1,30 +1,16 @@
-function esAlphanumerico(cadena) {
-    const permitidos = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_";
-    const array = cadena.split("")
-    const value = 1;
-    console.log(array);
-    array.forEach(element => {
-        if (permitidos.includes(element) == false) {
-            value = 0;
-        } 
-    });
-    return value;
-}
-
-
 function validar() {
     const user = document.getElementById("user").value;
     const pass = document.getElementById("pass").value;
+    const regex = "^(?=.*[a-zA-Z])(?=.*[0-9])[A-Za-z0-9_ ]*$";
 
-    if ((user.length < 6) && (pass.length < 6)) {
+    if ((user.length < 6) || (pass.length < 6)) {
         alert("El nombre y la contraseña deben tener al menos 6 caracteres");
     } else {
-        
-        if (pass.length < 6) {
-            alert("El nombre y la contraseña deben tener al menos 6 caracteres");
+        if(!user.match(regex)) {
+                alert("El nombre de usuario debe contener al menos una letra y un numero");
+            } else {
+                 alert("Es alfanumerico")
+            }
+
         }
-        // if (esAlphanumerico(user) == 0) {
-        //     alert("El usuario debe contener caracteres alphanumericos");
-        // }
     }
-}
