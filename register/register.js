@@ -5,6 +5,8 @@ function validarRegistro() {
     const repeat_pass = document.getElementById("repeat_pass").value;
     const regex = "^(?=.*[a-zA-Z])(?=.*[0-9])[A-Za-z0-9_ ]*$";
     const regexPass = "^(?=.*[a-zA-Z])(?=.*[0-9])[A-Za-z0-9_ ]*$";
+
+    //Validamos los parámetros desde el cliente
     if (user.length < 6 || pass.length < 6) {
         alert("El nombre y la contraseña deben tener al menos 6 caracteres");
     } else {

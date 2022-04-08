@@ -12,6 +12,7 @@
 
         if(!empty($_POST)) {
 
+            //Validamos los parámetros desde el servidor
             if (strlen($_POST['user']) < 6 || strlen($_POST['password']) < 6) {
 
                 echo "<p class='message'>El usuario y contraseña deben tener como minimo 6 caracteres</p>";
