@@ -25,7 +25,7 @@
             <hr/>
             <input class="login_submit" type="submit" onclick="validarRegistro()" value="Registrarme"/>
             <?php
-                include("register_mysql.php");  
+                include("./register_mysql.php");  
             ?>
         </form>
     </main>

@@ -13,7 +13,7 @@
         if(!empty($_POST)) {
 
             if (strlen($_POST['user']) > 6 && strlen($_POST['password']) > 6) {
-                if(preg_match('/^(?=.*[a-zA-Z])(?=.*[0-9])[A-Za-z0-9_ ]*$/', $_POST['user'])) {
+                if(preg_match('/^(?=.*[a-zA-Z])(?=.*[0-9])[A-Za-z0-9_ ]*$/', $_POST['user']) && preg_match('/^(?=.*[a-zA-Z])(?=.*[0-9])[A-Za-z0-9_ ]*$/', $_POST['password'])) {
                     $sql = "SELECT * FROM usuarios WHERE nombre_usuario = '" . $_POST['user'] . "' AND clave = '" . $_POST['password'] . "'";
 
                     if(($conexion->query($sql))->num_rows > 0) {

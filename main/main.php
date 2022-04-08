@@ -9,8 +9,10 @@
 </head>
 <body>
     <main>
-        <p class='message'>BIENVENIDO 😀!</p>
-        <a class="main_exit" href="../index.php">Volver</a>
+        <div class="home_header">
+            <a class="main_exit" href="../index.php">Volver</a>
+            <p class='message'>BIENVENIDO 😀!</p>
+        </div>
     </main>
 </body>
 </html>
