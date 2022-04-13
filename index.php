@@ -11,21 +11,37 @@
     <main>
         <h1>Inicia sesión</h1>
 
-        <form action="" class="login" id="login" method="POST">
+        <form action="./login/login_mysql.php" class="login" id="login" method="POST">
             <input class="login_input" id="user" type="text" name="user" placeholder="Usuario">
             <hr/>
             <input class="login_input" id="pass" type="password" name="password" placeholder="Contraseña">
             <hr/>
             <input class="login_submit" type="submit" onclick="validar()" value="Iniciar sesión"/>
             <?php
-                include("./login/login_mysql.php");  
+                session_start();
+
+                switch ($_SESSION['user']) {
+                    case "1":
+                        header("Location: ./main/main.php");
+                        break;
+                    case "0":
+                        echo "<p class='message'>Usuario o contraseña incorrectos</p>";
+                        break;
+                    case "2":
+                        echo "<p class='message'>El usuario cuenta o contraseña con menos de 6 caracteres</p>";
+                        break;
+                    case "3":
+                        echo "<p class='message'>El usuario debe tener solo numeros y letras</p>";
+                        break;
+                    default:
+                        $_SESSION['user'] = "-1";
+                        break;
+                }
             ?>
         </form>
     </main>
     <aside id="sidebar">
         <h1>Home Banking</h1>
-        <h2>¿No tienes cuenta?</h2>
-        <a href="./register/register.php">Registrate</a>
     </aside>
     <script src="./login/index.js"></script>
 </body>

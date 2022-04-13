@@ -12,6 +12,10 @@
         <div class="home_header">
             <a class="main_exit" href="../index.php">Volver</a>
             <p class='message'>BIENVENIDO 😀!</p>
+            <?php
+                session_start();
+                $_SESSION['user'] = "-1";
+            ?>
         </div>
     </main>
 </body>
