@@ -24,44 +24,64 @@ html {
 
 body {
     display: flex;
-    height: 100vh;
+    height: auto;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(180.8deg, var(--blue-sea) 16.69%, var(--just-black) 100%);
+}
+
+menu {
+    width: 100%;
+    height: 20%;
+    background: var(--blue-sea);
+}
+
+menu ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 4% 5%;
+}
+
+menu ul li > a {
+    text-decoration: none;
+    color: var(--just-white);
+    font-weight: bolder;
+    font-size: xx-large;
+    border-radius: 10px;
+    padding: 50%;
+}
+
+menu ul li > a:hover {
+    color: var(--lazy-white);
+    background-color: var(--washed-cyan);
+    transition: all 200ms ease;
 }
 
 main {
     width: 100%;
+    background-color: var(--lazy-white);
+    height: 100vh;
 }
 
-.home_header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-.main_exit {
-    text-decoration: none;
-    width: 20rem;
-    margin: 1%;
-    background: var(--washed-cyan);
-    border-style: none;
-    border-radius: 10px;
+main h1 {
+    font-size: xx-large;
+    font-weight: bolder;
+    color: var(--just-black);
+    text-align: center;
+    background-color: var(--just-white); 
+    margin: 0 40%;
     padding: 1%;
-    font-size: x-large;
-    color: var(--just-white);
-    transition: all 0.3s ease-in-out;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 0.2rem;
+    border-color: var(--just-black);
 }
-
-.main_exit:hover {
-    background-color: var(--foxy-orange);
-}
-
 
 main .message {
-    margin: 0 20%;
+    margin: 2% 35%;
     width: 30%;
     background: #76cd2a;
     border-style: solid;
@@ -74,3 +94,21 @@ main .message {
     font-size: large;
 }
 
+main .cuentas {
+    padding: 2% 5%;
+    margin: 2% 2%;
+    border-width: 0.4rem;
+    border-radius: 10px;
+    padding: 1%;
+    color: var(--just-black);
+    font-size: large;
+    display: flex;
+    justify-content: center;
+}
+
+main .cuenta {
+    background-color: var(--just-white);
+    margin: 2% 10%;
+    padding: 5%;
+    box-shadow: 0 0 0.2rem 0.2rem var(--just-black);
+}

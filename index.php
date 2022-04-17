@@ -21,10 +21,10 @@
                 session_start();
 
                 switch ($_SESSION['user']) {
-                    case "1":
+                    case "0":
                         header("Location: ./main/main.php");
                         break;
-                    case "0":
+                    case "1":
                         echo "<p class='message'>Usuario o contraseña incorrectos</p>";
                         break;
                     case "2":
