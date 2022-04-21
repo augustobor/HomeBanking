@@ -33,7 +33,7 @@ body {
 
 main {
     background: linear-gradient(180.8deg, var(--blue-sea) 16.69%, var(--just-black) 100%);
-    width: 80%;
+    width: 100%;
 }
 
 main h1 {
@@ -107,21 +107,3 @@ main form .message {
     font-weight: bold;
     font-size: large;
 }
-
-aside {
-    background: linear-gradient(180.8deg, var(--dark-vanilla) 16.69%, var(--just-black) 100%);
-    width: calc(100% - 80%);
-    color: var(--just-white);
-    font-size: large;
-    padding: 2%;
-}
-
-aside h1 {
-    margin-top: 5rem;
-}
-
-aside h2 {
-    margin-top: 3rem;
-    margin-bottom: 20rem;
-}
-

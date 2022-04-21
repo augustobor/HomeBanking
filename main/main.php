@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    include("../conexion.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,47 +12,53 @@
     <title>homeBanking | Home</title>
 </head>
 <body>
+    <p class='message'>BIENVENIDO 😀!</p>
     <menu>
         <ul>
             <li><a href="../index.php">Volver</a></li>
-            <li><a href="../index.php">Inicio</a></li>
-            <li><a href="../login/login.php">Login</a></li>
-            <li><a href="../contacto/contacto.php">Contacto</a></li>
+            <li><a href="./cuentas.php">Cuentas</a></li>
         </ul>
     </menu>
     <main>
-        <p class='message'>BIENVENIDO 😀!</p>
         
-        <h1>Cuentas</h1>
+        
         <section class="cuentas"> 
-            <!-- COMO LLEVARME EL NOMBRE DEL USUARIO A OTRO PHP -->
-            <!-- <?php
-                include("./cuentas.php");
-            ?> -->
 
-            <article class="cuenta">
-                <h2>Nombre</h2>
-                <p>Alias</p>
-                <p>Saldo</p>
-            </article>   
+            <h1>Cuentas</h1>
+            <div> 
+                <?php
 
-            <article class="cuenta">
-                <h2>Nombre</h2>
-                <p>Alias</p>
-                <p>Saldo</p>
-            </article>   
+                    if($conexion->connect_errno) {
+                        die("La conexión falló" . $conexion->connect_errno);
+                    } else {
 
-            <article class="cuenta">
-                <h2>Nombre</h2>
-                <p>Alias</p>
-                <p>Saldo</p>
-            </article>   
-            
+                        $sql = "SELECT * FROM cuentas WHERE id_usuario = '" . $_SESSION['user_id'] . "'";
+                                
+                        if(($conexion->query($sql))->num_rows > 0) {
+                            $resultado = mysqli_query($conexion, $sql);
+                            $filas = mysqli_fetch_array($resultado);
+
+                            for($i = 0; $i < count($filas); $i++) {
+                                ?>
+                                <article class="cuenta">
+                                    <h2><?php echo $filas[2 - $i]?></h2>
+                                    <p><?php echo $filas[4 - $i]?></p>
+                                    <p><?php echo $filas[5 - $i]?></p>
+                                    <!-- <p><?php echo $filas[5 - $i]['saldo']?></p> WTF FUNCIONA ASI! -->
+                                </article>  
+                             
+                            <?php
+                            }
+                        } else {                 
+                            $_SESSION['error'] = "No tienes cuentas";
+                            ?>
+                            <p class="message"><?php echo $_SESSION['error']?></p>
+                            <?php
+                        }
+                    }
+                ?>
+            </div>            
         </section>
     </main>
-    <?php
-        session_start();
-        $_SESSION['user'] = "-1";
-    ?>
 </body>
 </html>
