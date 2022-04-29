@@ -14,20 +14,20 @@
     <main>
         <h1>Registrar usuario</h1>
 
-        <form action="./register_mysql.php" class="login" id="login" method="POST">
+        <form action="./register_mysql.php" onsubmit="return validar();" class="login" id="login" method="POST">
             <input class="login_input" id="name" type="text" name="name" placeholder="Nombre">
             <hr/>
             <input class="login_input" id="surname" type="text" name="surname" placeholder="Apellido">
             <hr/>
             <input class="login_input" id="user" type="text" name="user" placeholder="Usuario">
             <hr/>
-            <input class="login_input" id="dni" type="number" name="dni" placeholder="DNI">
+            <input class="login_input" id="dni" type="text" name="dni" placeholder="DNI">
             <hr/>
             <input class="login_input" id="pass" type="password" name="password" placeholder="Contraseña">
             <hr/>
             <input class="login_input" id="pass2" type="password" name="password2" placeholder="Repetir Contraseña">
             <hr/>
-            <input class="login_submit" type="submit" onclick="validar()" value="Iniciar sesión"/>      
+            <input class="login_submit" type="submit" value="Registrar usuario"/>      
             
             <?php
             

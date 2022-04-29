@@ -13,9 +13,17 @@
                     if(preg_match('/^[A-Za-z0-9]*$/', $_POST['user'])) {
 
                         $sql = "SELECT * FROM usuarios WHERE nombre_usuario = '" . $_POST['user'] . "' AND clave = '" . $_POST['password'] . "'";
+
+
+                        //investigar mas sobre mysqli_fetch_array.
                         $resultado = mysqli_query($conexion, $sql);
+                        
+                        //var_dump(mysqli_fetch_array($resultado));
+
+                        //die();
                         if($resultado->num_rows > 0) {
 
+                            //fetch_array: transforma la fila del resultado en un array.
                             $filas = mysqli_fetch_array($resultado);
 
                             if($filas['tipo'] == 'empleado') {

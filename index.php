@@ -15,12 +15,12 @@
     <main>
         <h1>Inicia sesión</h1>
 
-        <form action="./login/login_mysql.php" class="login" id="login" method="POST">
+        <form action="./login/login_mysql.php" onsubmit="return validar();" class="login" id="login" method="POST">
             <input class="login_input" id="user" type="text" name="user" placeholder="Usuario">
             <hr/>
             <input class="login_input" id="pass" type="password" name="password" placeholder="Contraseña">
             <hr/>
-            <input class="login_submit" type="submit" onclick="validar()" value="Iniciar sesión"/>
+            <input class="login_submit" type="submit" value="Iniciar sesión"/>
             
             <?php
                 if(isset($_SESSION['error'])) { ?>

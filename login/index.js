@@ -5,9 +5,13 @@ function validar() {
 
     if ((user.length < 6) || (pass.length < 6)) {
         alert("El nombre y la contraseña deben tener al menos 6 caracteres");
+        return false;
     } else {
         if(!user.match(regex)) {
                 alert("El nombre de usuario debe contener letras y/o un numeros");
+                return false;
         } 
     }
+
+    return true;
 }
