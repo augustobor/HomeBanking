@@ -16,12 +16,17 @@
     <menu>
         <ul>
             <li><a href="../index.php">Volver</a></li>
-            <li><a href="./alta_cliente.php">Dar de alta a cliente</a></li>
+            <li><a href="./alta_cliente.php">Alta_cliente</a></li>
+            <li><a href="./alta_cuenta.php">Alta_cuenta</a></li>
         </ul>
     </menu>
     <main>
-        <p class='message'><?php echo $_SESSION['sucess'] ?></p>
+        <?php
+            if($_SESSION['sucess'] != NULL) {
+                echo "<p class='sucess'>" . $_SESSION['sucess'] . "</p>";
+                $_SESSION['sucess'] = NULL;
+            }
+        ?>
     </main>
-
 </body>
 </html>

@@ -52,7 +52,7 @@
                         } else {                 
                             $_SESSION['error'] = "No tienes cuentas";
                             ?>
-                            <p class="message"><?php echo $_SESSION['error']?></p>
+                            <p class="cuenta"><?php echo $_SESSION['error']?></p>
                             <?php
                         }
                     }
