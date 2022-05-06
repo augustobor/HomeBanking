@@ -71,39 +71,22 @@ main {
 
 .message {
     width: 100%;
-    background: #76cd2a;
-    border-style: solid;
-    border-width: 0.4rem;
-    border-color: #075a26;
+    background: var(--washed-cyan);
     padding: 1%;
     color: var(--just-white);
     font-weight: bold;
     font-size: large;
 }
 
-main .cuentas h1 {
-    font-size: xx-large;
-    font-weight: bolder;
-    color: var(--just-black);
-    text-align: center;
-    background-color: var(--beige);
-    margin: 0% 30%;
-    margin-bottom: 10rem;
-    padding: 1%;
-    border-style: solid;
-    border-radius: 10px;
-    border-width: 0.2rem;
-    border-color: var(--just-black);
-}
 
 main .cuentas > div {
     display: flex;
     justify-content: center;
 }
 
-main .cuentas {
+main section {
     padding: 2% 5%;
-    margin: 2% 10%;
+    margin: 2% 15%;
     width: auto;
     border-width: 0.4rem;
     border-radius: 10px;
@@ -113,19 +96,31 @@ main .cuentas {
     font-size: large;
 }
 
-main .cuenta {
-    background-color: var(--beige);
-    margin: 2% 5%;
-    padding: 2%;
-    color: var(--dark-beige);
-    border-radius: 10px;
-    box-shadow: 0 0 0.1rem 0.1rem var(--just-black);
-}
-
-main .cuenta h2 {
+main section h2 {
     font-size: xx-large;
     font-weight: bolder;
-    color: var(--just-black);
+    color: var(--lazy-white);
+    text-align: center;
+    margin: 0% 30%;
+    padding: 1%;
+    border-radius: 10px;
+    background-color: var(--blue-sea);
+    margin-bottom: 10rem;
+}
+
+main .cuenta {
+    background-color: #3484a9;
+    margin: 2% 5%;
+    padding: 2%;
+    color: var(--lazy-white);
+    border-radius: 10px;
+    box-shadow: 0 0 0.1rem 0.1rem var(--blue-sea);
+}
+
+main .cuenta h3 {
+    font-size: xx-large;
+    font-weight: bolder;
+    color: var(--lazy-white);
     margin-bottom: 5rem;
     text-align: center;
 }

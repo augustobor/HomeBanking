@@ -12,19 +12,19 @@
     <title>homeBanking | Home</title>
 </head>
 <body>
-    <p class='message'>BIENVENIDO 😀!</p>
+    <p class='message'>BIENVENIDO <?php echo $_SESSION['user'];?> 😀!</p>
     <menu>
         <ul>
             <li><a href="../index.php">Volver</a></li>
             <li><a href="./cuentas.php">Cuentas</a></li>
+            <li><a href="./transferir.php">Transferir</a></li>
         </ul>
     </menu>
     <main>
         
-        
         <section class="cuentas"> 
 
-            <h1>Cuentas</h1>
+            <h2>Cuentas</h2>
             <div> 
                 <?php
 
@@ -41,7 +41,7 @@
                             for($i = 0; $i < count($filas); $i++) {
                                 ?>
                                 <article class="cuenta">
-                                    <h2><?php echo $filas[2 - $i]?></h2>
+                                    <h3><?php echo $filas[2 - $i]?></h2>
                                     <p><?php echo $filas[4 - $i]?></p>
                                     <p><?php echo $filas[5 - $i]?></p>
                                     <!-- <p><?php echo $filas[5 - $i]['saldo']?></p> WTF FUNCIONA ASI! -->
@@ -58,6 +58,12 @@
                     }
                 ?>
             </div>            
+        </section>
+
+        <section>
+            <h2>Ultimos movimientos</h2>
+            <?php
+            ?>
         </section>
     </main>
 </body>

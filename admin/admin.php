@@ -12,7 +12,7 @@
     <title>homeBanking | Admin</title>
 </head>
 <body>
-    <p class='message'>Vista del admin</p>
+    <!-- <p class='message'>Vista del admin</p> -->
     <menu>
         <ul>
             <li><a href="../index.php">Volver</a></li>
@@ -21,6 +21,10 @@
         </ul>
     </menu>
     <main>
+        <div>
+            <h2>Bienvenido a la vista del admin 😎</h2>
+            <h2>Selecciona alguna de las opciones del menú</h2>
+        </div>
         <?php
             if($_SESSION['sucess'] != NULL) {
                 echo "<p class='sucess'>" . $_SESSION['sucess'] . "</p>";

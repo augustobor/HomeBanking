@@ -33,6 +33,7 @@
 
                             } else {
                                 $_SESSION['user_id'] = $filas['id'];
+                                $_SESSION['user'] = $filas['nombre_usuario'];
                                 header("Location: ../main/main.php");
                                 die();
                             }

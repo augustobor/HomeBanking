@@ -19,9 +19,7 @@
             <hr/>
             <input class="login_input" id="alias" type="text" name="alias" placeholder="Alias">
             <hr/>
-            <input class="login_input" id="saldo" type="number" name="saldo" placeholder="Saldo">
-            <hr/>
-            <input class="login_input" id="date" type="date" name="date" placeholder="fecha_hora">
+            <input class="login_input" id="date" type="datetime-local" name="date" placeholder="fecha_hora">
             <hr/>
             <input class="login_input" id="id_user" type="number" name="id_user" placeholder="id del usuario dueño">
             <hr/>

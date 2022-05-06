@@ -9,41 +9,47 @@
         session_start();
         if(!empty($_POST)) {    
 
-                if(preg_match('/^[A-Za-z]{5,}*$/', $_POST['name'])) {
+                if(strlen($_POST['name']) >= 5) {
 
-                    if  (preg_match('/^[A-Za-z]{8,}*$/', $_POST['alias'])) {
+                    if  (strlen($_POST['alias']) >= 8) {
+
+                        if (preg_match('/^[A-Za-z]+$/', $_POST['name']) && preg_match('/^[A-Za-z]+$/', $_POST['alias'])) {
                         
-                        $sql = "SELECT * FROM cuentas where alias = '" . $_POST['alias'] . "'";
-                        $resultado = mysqli_query($conexion, $sql);
-
-                        if($resultado->num_rows == 0) {
-
-                            $sql = "SELECT * FROM cuentas where id_usuario = '" . $_POST['id_user'] . "'";
-                            $resultado = mysqli_query($conexion, $sql);
-
-                            if($resultado->num_rows != 0) {
-                                
-                                $sql = "INSERT INTO cuentas (id_usuario, nombre, alias, saldo, fecha_hora) VALUES 
-                                                                                ('" . $_POST['id_user'] . "', '" . $_POST['name'] . "','" . $_POST['alias'] . 
-                                                                                "','" . $_POST['saldo'] . "','" . $_POST['date'] . "')";
-
+                                $sql = "SELECT * FROM cuentas where alias = '" . $_POST['alias'] . "'";
                                 $resultado = mysqli_query($conexion, $sql);
-                                if($resultado) {
 
-                                    $_SESSION['sucess'] = "Cuenta creada correctamente";
-                                            header("Location: ./admin.php");
-                                            die();
+                                if($resultado->num_rows == 0) {
+
+                                    $sql = "SELECT * FROM cuentas where id_usuario = '" . $_POST['id_user'] . "'";
+                                    $resultado = mysqli_query($conexion, $sql);
+
+                                    if($resultado->num_rows != 0) {
+                                        
+                                        $sql = "INSERT INTO cuentas (id_usuario, nombre, alias, saldo, fecha_hora) VALUES 
+                                                                                        ('" . $_POST['id_user'] . "', '" . $_POST['name'] . "','" . $_POST['alias'] . 
+                                                                                        "', '0', '" . $_POST['date'] . "')";
+
+                                        $resultado = mysqli_query($conexion, $sql);
+                                        if($resultado) {
+
+                                            $_SESSION['sucess'] = "Cuenta creada correctamente";
+                                                    header("Location: ./admin.php");
+                                                    die();
+                                        } else {
+
+                                            $_SESSION['error'] = "Error al crear una cuenta";
+                                        }
+
+                                    } else {
+                                        $_SESSION['error'] = "No existe un usuario con ese ID";
+                                    }
+
                                 } else {
-
-                                    $_SESSION['error'] = "Error al crear una cuenta";
+                                    $_SESSION['error'] = "Ya existe una cuenta con ese alias";
                                 }
 
-                            } else {
-                                $_SESSION['error'] = "No existe un usuario con ese ID";
-                            }
-
                         } else {
-                            $_SESSION['error'] = "Ya existe una cuenta con ese alias";
+                             $_SESSION['error'] = "El nombre y alias deben ser alfabeticos";
                         }
                         
                     } else {
