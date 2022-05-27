@@ -11,7 +11,6 @@
     <title>homeBanking | Admin</title>
 </head>
 <body>
-    <!-- <p class='message'>Vista del admin</p> -->
     <menu>
         <ul>
             <li><a href="../index.php">Volver</a></li>
@@ -23,19 +22,11 @@
     </menu>
     <main>
         <div>
-            <h2>Bienvenido a la vista del admin 😎</h2>
+            <h2>Bienvenido a la vista del admin 😎 <?php echo $_SESSION['user'];?></h2>
             <h2>Selecciona alguna de las opciones del menú</h2>
         </div>
         <?php
-            if(isset($_SESSION['sucess'])) { ?>
-                <p class='message'>
-                <?php 
-                echo $_SESSION['sucess'];
-                unset($_SESSION['sucess']);
-                ?>
-                 </p>
-           <?php 
-            }
+            include('../sucess.php');
         ?>
     </main>
 </body>

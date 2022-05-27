@@ -5,6 +5,7 @@
     if($conexion->connect_errno) {
         die("La conexión falló" . $conexion->connect_errno);
     } else {
+
         session_start();
         if(!empty($_POST)) {    
             
@@ -19,6 +20,9 @@
                         if($resultado->num_rows > 0) {
 
                             $filas = mysqli_fetch_array($resultado);
+                            
+                            $_SESSION['user'] = $filas['nombre'];
+                            $_SESSION['user_id'] = $filas['id'];
 
                             if($filas['tipo'] == 'empleado') {
 
@@ -26,8 +30,7 @@
                                 die();
 
                             } else {
-                                $_SESSION['user_id'] = $filas['id'];
-                                $_SESSION['user'] = $filas['nombre_usuario'];
+
                                 header("Location: ../client/main.php");
                                 die();
                             }
@@ -43,6 +46,7 @@
             } else {
                 $_SESSION['error'] = "El usuario o contraseña no cuentan con más de 6 caracteres";
             }
+
         }
         
         header("Location: ../index.php");

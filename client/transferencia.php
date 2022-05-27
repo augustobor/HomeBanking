@@ -13,31 +13,22 @@
 <body>
     <main>
 
+    <h1>Transfiere de forma segura con nosotros</h1>
         <header>
             <a href="./main.php">Volver</a>
-            <h1>Transfiere de forma segura con nosotros</h1>
         <header/>
         
-        <form action="./transferencia_mysql.php" onsubmit="" class="login" id="login" method="POST">
+        <form action="./sql/transferencia_mysql.php" method="POST">
             <input id="origin" type="text" name="origin" placeholder="Alias de cuenta origen">
 
             <input id="cash" type="number" name="cash" placeholder="Monto">
 
             <input id="destiny" type="text" name="destiny" placeholder="Alias cuenta destino">
 
-            <input class="login_submit" type="submit" value="Transferir"/>      
+            <input class="submit" type="submit" value="Transferir"/>      
             
             <?php
-            
-                if(isset($_SESSION['error'])) { ?>
-                    <p class='message'>
-                    <?php 
-                    echo $_SESSION['error'];
-                    unset($_SESSION['error']);
-                    ?>
-                     </p>
-               <?php 
-                }
+                include('../error.php');
             ?>
         </form>
 

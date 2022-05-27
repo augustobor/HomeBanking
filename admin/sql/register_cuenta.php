@@ -15,26 +15,30 @@
 
                         if (preg_match('/^[A-Za-z]+$/', $_POST['name']) && preg_match('/^[A-Za-z]+$/', $_POST['alias'])) {
                         
-                                $sql = "SELECT * FROM cuentas where alias = '" . $_POST['alias'] . "'";
-                                $resultado = mysqli_query($conexion, $sql);
+
+                                $resultado = mysqli_query($conexion, "SELECT * 
+                                FROM cuentas where alias = '" . $_POST['alias'] . "'");
 
                                 if($resultado->num_rows == 0) {
 
-                                    $sql = "SELECT * FROM usuarios where id = '" . $_POST['id_user'] . "'";
-                                    $resultado = mysqli_query($conexion, $sql);
+                                    $resultado = mysqli_query($conexion, "SELECT * 
+                                    FROM usuarios 
+                                    where id = '" . $_POST['id_user'] . "'");
 
                                     if($resultado->num_rows != 0) {
                                         
-                                        $sql = "INSERT INTO cuentas (id_usuario, nombre, alias, saldo, fecha_hora) VALUES 
-                                                                                        ('" . $_POST['id_user'] . "', '" . $_POST['name'] . "','" . $_POST['alias'] . 
-                                                                                        "', '0', NOW())";
 
-                                        $resultado = mysqli_query($conexion, $sql);
+                                        $resultado = mysqli_query($conexion, "INSERT INTO cuentas (id_usuario, nombre, alias, saldo, fecha_hora) VALUES 
+                                        ('" . $_POST['id_user'] . "', '" . $_POST['name'] . "','" . $_POST['alias'] . 
+                                        "', '0', NOW())");
+
+
                                         if($resultado) {
 
                                             $_SESSION['sucess'] = "Cuenta creada correctamente";
-                                                    header("Location: ../admin.php");
-                                                    die();
+                                            header("Location: ../admin.php");
+                                            die();
+                                            
                                         } else {
 
                                             $_SESSION['error'] = "Error al crear una cuenta";

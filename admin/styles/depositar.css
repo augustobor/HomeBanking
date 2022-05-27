@@ -61,13 +61,13 @@ form input::placeholder {
 
 }
 
-form .login_submit {
+form .submit {
     width: 20%;
     margin: 5%;
     transition: all 100ms ease-in;
 }
 
-form .login_submit:hover {
+form .submit:hover {
     cursor: pointer;
     background-color: var(--dark-beige);
     transition: all 100ms ease-in; 

@@ -54,10 +54,10 @@ function isUser(user) {
         usuario = true;
     }
 
-    return isUser;
+    return usuario;
 }
 
-function validar() {
+function validar_cliente() {
 
     const name = document.getElementById('name').value;
     const surname = document.getElementById('surname').value;
@@ -140,26 +140,25 @@ function validar_cuenta() {
 
     } else {
 
-            if(alias.length < 8) {
-                alert("El alias debe contener almenos 8 caracteres alfabéticos");
+        if(alias.length < 8) {
+            alert("El alias debe contener almenos 8 caracteres alfabéticos");
+            return false;
+
+        } else {
+
+            if(id_user.length == 0) {
+                alert("El id de usuario no puede estar vacio");
                 return false;
-
-            } else {
-
-                if(id_user.length == 0) {
-                    alert("El id de usuario no puede estar vacio");
+            }
+                
+            else {
+                if(!name.match(regex) || !alias.match(regex)) {
+                    alert("El nombre y el alias deben ser alfabéticos");
                     return false;
                 }
-                
-                else {
-                    if(!name.match(regex) || !alias.match(regex)) {
-                        alert("El nombre y el alias deben ser alfabéticos");
-                        return false;
-                    }
             }
         }
     }
-
     return true;
 }
 

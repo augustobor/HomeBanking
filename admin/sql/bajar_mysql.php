@@ -9,27 +9,30 @@
         session_start();
         if(!empty($_POST)) {  
             
-            $sql = "SELECT * FROM cuentas where alias = '" . $_POST['destiny'] . "'";
-            $resultado_destiny = mysqli_query($conexion, $sql);
+            $resultado_destiny = mysqli_query($conexion, "SELECT * 
+            FROM cuentas 
+            where alias = '" . $_POST['destiny'] . "'");
 
             if($resultado_destiny->num_rows != 0) {
 
                     mysqli_query($conexion, "SET foreign_key_checks = 0");
-                    $sql = "DELETE from cuentas where alias='" . $_POST['destiny'] . "'";
-                    $resultado = mysqli_query($conexion, $sql);
+
+                    $resultado = mysqli_query($conexion, "DELETE from cuentas 
+                    where alias='" . $_POST['destiny'] . "'");
+
                     mysqli_query($conexion, "SET foreign_key_checks = 1");
                     if($resultado) {
 
                         $_SESSION['sucess'] = "Baja realizada";
                         $conexion -> commit();
-                                header("Location: ../admin.php");
-                                die();
+                        header("Location: ../admin.php");
+                        die();
+
                     } else {
                         $conexion -> rollback();
                         $_SESSION['error'] = "Error al dar de baja";
                     }
-
-
+                    
             } else {
                 $_SESSION['error'] = "El alias a eliminar no existe";
             }

@@ -13,23 +13,13 @@
 <body>
     <main>
         
-        <form action="./sql/bajar_mysql.php" onsubmit="" class="login" id="login" method="POST">
+        <form action="./sql/bajar_mysql.php" method="POST">
             <input id="destiny" type="text" name="destiny" placeholder="Alias de cuenta a eliminar">
 
-            <input class="login_submit" type="submit" value="Eliminar"/>      
+            <input class="submit" type="submit" value="Eliminar"/>      
             
             <?php
-            
-                if(isset($_SESSION['error'])) { ?>
-                    <p class='message'>
-                    <?php 
-                    echo $_SESSION['error'];
-                    unset($_SESSION['error']);
-                    ?>
-                     </p>
-               <?php 
-                }
-
+                include('../error.php');
             ?>
         </form>
 

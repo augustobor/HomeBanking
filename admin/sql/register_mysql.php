@@ -50,22 +50,24 @@
 
                                         if($_POST['password'] == $_POST['password2']) {
 
-                                        
-                                            $sql = "SELECT * FROM usuarios where nombre_usuario = '" . $_POST['user'] . "'";
-                                            $resultado = mysqli_query($conexion, $sql);
+                                    
+                                            $resultado = mysqli_query($conexion, "SELECT * 
+                                            FROM usuarios 
+                                            where nombre_usuario = '" . $_POST['user'] . "'");
 
                                             if($resultado->num_rows == 0) {
 
-                                                $sql = "SELECT * FROM usuarios where dni = '" . $_POST['dni'] . "'";
-                                                $resultado = mysqli_query($conexion, $sql);
+                                                $resultado = mysqli_query($conexion, "SELECT * 
+                                                FROM usuarios 
+                                                where dni = '" . $_POST['dni'] . "'");
 
                                                 if($resultado->num_rows == 0) {
 
-                                                    $sql = "INSERT INTO usuarios (nombre, apellido, nombre_usuario, clave, dni, tipo, cambio_clave) VALUES 
-                                                                                ('" . $_POST['name'] . "', '" . $_POST['surname'] . "','" . $_POST['user'] . 
-                                                                                "','" . $_POST['password'] . "','" . $_POST['dni'] . "', 'comun','1')";
-
-                                                    $resultado = mysqli_query($conexion, $sql);
+                                                    $resultado = mysqli_query($conexion, "INSERT INTO usuarios (nombre, apellido, nombre_usuario, clave, dni, tipo, cambio_clave) VALUES 
+                                                    ('" . $_POST['name'] . "', '" . $_POST['surname'] . "','" . $_POST['user'] . 
+                                                    "','" . $_POST['password'] . "','" . $_POST['dni'] . "', 'comun','1')");
+                                                    
+                                                    
                                                     if($resultado) {
 
                                                         $_SESSION['sucess'] = "Usuario registrado correctamente";

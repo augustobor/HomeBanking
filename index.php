@@ -1,6 +1,5 @@
- <?php
+<?php
     session_start();
-    $_SESSION['error'] = NULL;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,18 +26,9 @@
             <input class="login_submit" type="submit" value="Iniciar sesión"/>
             
             <?php
-                if(isset($_SESSION['error'])) { ?>
-                    <p class='message'>
-                    <?php 
-                    echo $_SESSION['error'];
-                    unset($_SESSION['error']);
-                    ?>
-                     </p>
-               <?php 
-                }
+                include('./error.php');
             ?>
-               
-                
+
         </form>
     </main>
     <aside id="sidebar">
