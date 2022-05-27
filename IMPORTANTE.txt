@@ -1,5 +1,0 @@
-Consideraciones del entregable:
-
--La carpeta debe estar en el directorio htdocs
--Si no funciona la conexión de la base de datos con la vista, probar cambiando el puerto a 3307
--La url del index.php en este caso es: http://localhost/homeBanking/index.php

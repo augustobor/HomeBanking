@@ -1,6 +1,6 @@
 <?php   
 
-    include("../conexion.php");
+    include("../../conexion.php");
 
     if($conexion->connect_errno) {
         die("La conexión falló" . $conexion->connect_errno);
@@ -20,20 +20,20 @@
 
                                 if($resultado->num_rows == 0) {
 
-                                    $sql = "SELECT * FROM cuentas where id_usuario = '" . $_POST['id_user'] . "'";
+                                    $sql = "SELECT * FROM usuarios where id = '" . $_POST['id_user'] . "'";
                                     $resultado = mysqli_query($conexion, $sql);
 
                                     if($resultado->num_rows != 0) {
                                         
                                         $sql = "INSERT INTO cuentas (id_usuario, nombre, alias, saldo, fecha_hora) VALUES 
                                                                                         ('" . $_POST['id_user'] . "', '" . $_POST['name'] . "','" . $_POST['alias'] . 
-                                                                                        "', '0', '" . $_POST['date'] . "')";
+                                                                                        "', '0', NOW())";
 
                                         $resultado = mysqli_query($conexion, $sql);
                                         if($resultado) {
 
                                             $_SESSION['sucess'] = "Cuenta creada correctamente";
-                                                    header("Location: ./admin.php");
+                                                    header("Location: ../admin.php");
                                                     die();
                                         } else {
 
@@ -59,7 +59,7 @@
                     $_SESSION['error'] = "El nombre de la cuenta debe tener al menos 5 caracteres alfabéticos";
                 }
 
-            header("Location: ./alta_cuenta.php");
+            header("Location: ../alta_cuenta.php");
         }
     }
 ?>

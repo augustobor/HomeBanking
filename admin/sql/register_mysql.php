@@ -1,6 +1,35 @@
-<?php   
+<?php
 
-    include("../conexion.php");
+    function validar_pass($pass) {
+    
+        $isPass = false;
+        $isPassAlpha = false;
+        $isPassNum = false;
+        $isPassSpecial = false;
+
+        for ($i = 0; $i < strlen($pass); $i++) {
+
+            if (!preg_match('/[A-Za-z]/', $pass[$i])) {
+                $isPassAlpha = true;
+            }
+            
+            if (!preg_match('/[0-9]/', $pass[$i])) {
+                $isPassNum = true;
+            }
+
+            if (!preg_match('/["!@#$%&*()_+-=?¿¡]/', $pass[$i])) {
+                $isPassSpecial = true;
+            }
+        }
+
+        if($isPassAlpha && ($isPassNum || $isPassSpecial)) {
+            $isPass = true;
+        }
+
+        return $isPass;
+    }
+
+    include("../../conexion.php");
 
     if($conexion->connect_errno) {
         die("La conexión falló" . $conexion->connect_errno);
@@ -14,6 +43,8 @@
                 if(preg_match('/^[A-Za-z]+$/', $_POST['name']) && preg_match('/^[A-Za-z]+$/', $_POST['surname'])) {
                     
                     if ((strlen($_POST['user']) >= 6) && (strlen($_POST['password']) >= 6)) {
+
+                        if (validar_pass($_POST['password'])) {
 
                                     if(preg_match('/^[0-9]*$/', $_POST['dni'])) {
 
@@ -38,10 +69,13 @@
                                                     if($resultado) {
 
                                                         $_SESSION['sucess'] = "Usuario registrado correctamente";
-                                                        header("Location: ./admin.php");
+                                                        $conexion -> commit();
+                                                        header("Location: ../admin.php");
                                                         die();
-                                                    } else {
 
+                                                    } else {
+                                                        
+                                                        $conexion -> rollback(); 
                                                         $_SESSION['error'] = "Error al registrar el usuario";
                                                     }
 
@@ -57,7 +91,9 @@
                                     } else {
                                         $_SESSION['error'] = "El dni debe contener solo numeros";
                                     }
-                                        
+                            } else {
+                                $_SESSION['error'] = "La contraseña debe contener mayusuculas, minusculas y un digito o caracter especial";
+                        }                    
                     } else {
                         $_SESSION['error'] = "El usuario o contraseña no cuentan con más de 6 caracteres";
                     } 
@@ -69,7 +105,7 @@
             }
         }
 
-        header("Location: ./alta_cliente.php");
+        header("Location: ../alta_cliente.php");
         
     }
 ?>

@@ -1,0 +1,22 @@
+:root {
+	--blue-sea: #103E55;
+    --just-black: #000000;
+    --dark-vanilla: #7F7C77;
+    --black-dark-vanilla: #403e3c;
+    --just-white: #FAFAFA;
+    --lazy-white: #E6E1DE;
+    --foxy-orange: #FF7F14;
+    --washed-cyan: #4F8BA7;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0; 
+}
+
+html {
+	font-size: 62.5%;
+	font-family: 'inherir', 'Seoge UI', sans-serif;
+	scroll-behavior: smooth; 
+}

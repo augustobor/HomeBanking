@@ -14,16 +14,10 @@
 
                         $sql = "SELECT * FROM usuarios WHERE nombre_usuario = '" . $_POST['user'] . "' AND clave = '" . $_POST['password'] . "'";
 
-
-                        //investigar mas sobre mysqli_fetch_array.
                         $resultado = mysqli_query($conexion, $sql);
                         
-                        //var_dump(mysqli_fetch_array($resultado));
-
-                        //die();
                         if($resultado->num_rows > 0) {
 
-                            //fetch_array: transforma la fila del resultado en un array.
                             $filas = mysqli_fetch_array($resultado);
 
                             if($filas['tipo'] == 'empleado') {
@@ -34,7 +28,7 @@
                             } else {
                                 $_SESSION['user_id'] = $filas['id'];
                                 $_SESSION['user'] = $filas['nombre_usuario'];
-                                header("Location: ../main/main.php");
+                                header("Location: ../client/main.php");
                                 die();
                             }
 

@@ -7,19 +7,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href= "./style.css">
+    <link rel="stylesheet" type="text/css" href= "./styles/style.css">
     <title>homeBanking | Alta</title>
 </head>
 <body>
     <main>
         <h1>Crear cuenta</h1>
-
-        <form action="./register_cuenta.php" onsubmit="return validar();" class="login" id="login" method="POST">
+        <a href="./admin.php">Volver</a>
+        <form action="./sql/register_cuenta.php" onsubmit="return validar_cuenta();" class="login" id="login" method="POST">
             <input class="login_input" id="name" type="text" name="name" placeholder="Nombre de la cuenta">
             <hr/>
             <input class="login_input" id="alias" type="text" name="alias" placeholder="Alias">
-            <hr/>
-            <input class="login_input" id="date" type="datetime-local" name="date" placeholder="fecha_hora">
             <hr/>
             <input class="login_input" id="id_user" type="number" name="id_user" placeholder="id del usuario dueño">
             <hr/>
@@ -38,8 +36,7 @@
                 }
             ?>
         </form>
-
     </main>
-    <script src="./register_cuenta.js"></script>
+    <script src="./validaciones.js"></script>
 </body>
 </html>

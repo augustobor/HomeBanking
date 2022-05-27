@@ -1,9 +1,9 @@
 function isPass(pass) {
 
-    const isPass = false;
-    let isPassNum = false;
-    let isPassAlpha = false;
-    let isPassSpecial = false;
+    var isPass = false;
+    var isPassNum = false;
+    var isPassAlpha = false;
+    var isPassSpecial = false;
 
     let passArray = pass.split("");
     passArray.forEach(character => {
@@ -22,7 +22,7 @@ function isPass(pass) {
         
     });
 
-    if(isPassNum && (isPassAlpha || isPassSpecial)) {
+    if(isPassAlpha && (isPassNum || isPassSpecial)) {
         isPass = true;
     }
 
@@ -32,11 +32,12 @@ function isPass(pass) {
 
 function isUser(user) {
 
-    const isUser = false;
-    let isUserNum = false;
-    let isUserAlpha = false;
+    var usuario = false;
+    var isUserNum = false;
+    var isUserAlpha = false;
 
     let userArray = user.split("");
+
     userArray.forEach(character => {
 
         if(character.match(/[0-9]/)) {
@@ -50,7 +51,7 @@ function isUser(user) {
     });
 
     if(isUserNum && isUserAlpha) {
-        isUser = true;
+        usuario = true;
     }
 
     return isUser;
@@ -121,5 +122,53 @@ function validar() {
                 }  
             }         
         }
+    return true;
+}
+
+
+function validar_cuenta() {
+
+    const name = document.getElementById('name').value;
+    const alias = document.getElementById('alias').value;
+    const id_user = document.getElementById('id_user').value;
+    const regex = "^[A-Za-z]*$";
+
+    if(name.length < 5) { 
+
+        alert("El nombre debe contener almenos 5 caracteres alfabéticos");
+        return false; 
+
+    } else {
+
+            if(alias.length < 8) {
+                alert("El alias debe contener almenos 8 caracteres alfabéticos");
+                return false;
+
+            } else {
+
+                if(id_user.length == 0) {
+                    alert("El id de usuario no puede estar vacio");
+                    return false;
+                }
+                
+                else {
+                    if(!name.match(regex) || !alias.match(regex)) {
+                        alert("El nombre y el alias deben ser alfabéticos");
+                        return false;
+                    }
+            }
+        }
+    }
+
+    return true;
+}
+
+function validar_deposito() {
+    const amount = document.getElementById("amount").value;
+
+    if (amount <= 0) {
+        alert("El monto debe ser mayor a 0");
+        return false;
+    } 
     return true;
 }

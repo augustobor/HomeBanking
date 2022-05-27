@@ -7,14 +7,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href= "./style.css">
+    <link rel="stylesheet" type="text/css" href= "./styles/style.css">
     <title>homeBanking | Alta</title>
 </head>
 <body>
-    <main>
+    <main> 
         <h1>Registrar usuario</h1>
-
-        <form action="./register_mysql.php" onsubmit="return validar();" class="login" id="login" method="POST">
+        <a href="./admin.php">Volver</a>
+        <form action="./sql/register_mysql.php" onsubmit="return validar();" class="login" id="login" method="POST">
             <input class="login_input" id="name" type="text" name="name" placeholder="Nombre">
             <hr/>
             <input class="login_input" id="surname" type="text" name="surname" placeholder="Apellido">
@@ -42,8 +42,8 @@
                 }
             ?>
         </form>
-
+        
     </main>
-    <script src="./register.js"></script>
+    <script src="./validaciones.js"></script>
 </body>
 </html>

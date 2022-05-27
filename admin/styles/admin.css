@@ -1,25 +1,4 @@
-:root {
-	--blue-sea: #103E55;
-    --just-black: #000000;
-    --dark-vanilla: #7F7C77;
-    --black-dark-vanilla: #403e3c;
-    --just-white: #FAFAFA;
-    --lazy-white: #E6E1DE;
-    --foxy-orange: #FF7F14;
-    --washed-cyan: #4F8BA7;
-}
-
-* {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0; 
-}
-
-html {
-	font-size: 62.5%;
-	font-family: 'inherir', 'Seoge UI', sans-serif;
-	scroll-behavior: smooth; 
-}
+@import url('../../style/configuration.css');
 
 
 body {
@@ -87,13 +66,13 @@ main h2 {
 
 
 .message {
-    width: 100%;
-    background: #76cd2a;
-    border-style: solid;
-    border-width: 0.4rem;
-    border-color: #075a26;
+    width: auto;
+    margin: 0 25%;
+    border-radius: 10px;
+    background: var(--washed-cyan);
     padding: 1%;
     color: var(--just-white);
     font-weight: bold;
     font-size: large;
 }
+
