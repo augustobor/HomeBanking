@@ -12,7 +12,11 @@
 </head>
 <body>
     <main>
-        
+        <section>
+            <?php
+                include('./controller/cuentas_3_meses.php');
+            ?>
+        </section>
         <form action="./sql/bajar_mysql.php" method="POST">
             <input id="destiny" type="text" name="destiny" placeholder="Alias de cuenta a eliminar">
 

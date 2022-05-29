@@ -44,5 +44,6 @@
             ?>
         </section>
     </main>
+    <script src='./lista.js'></script>
 </body>
 </html>

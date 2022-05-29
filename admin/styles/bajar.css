@@ -29,6 +29,34 @@ a:hover {
     transition: all 200ms ease;
 }
 
+h1 {
+    font-size: xx-large;
+    color: var(--just-white);
+    font-weight: bolder;
+    text-align: center;
+    margin: 5% 0%;
+}
+
+section > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.cuenta {
+    background-color: #3484a9;
+    margin: 2%;
+    padding: 2%;
+    width: 40%;
+    color: var(--lazy-white);
+    border-radius: 10px;
+    box-shadow: 0 0 0.1rem 0.1rem var(--blue-sea);
+    font-size: medium;
+    font-weight: bold;
+}
+
 form {
     padding: 1%;
     border-radius: 10px;

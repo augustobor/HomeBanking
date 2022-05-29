@@ -9,6 +9,9 @@
         session_start();
         if(!empty($_POST)) {  
             
+
+            //Verificar baja de cuentas 3 meses del lado del servidor 
+            
             $resultado_destiny = mysqli_query($conexion, "SELECT * 
             FROM cuentas 
             where alias = '" . $_POST['destiny'] . "'");
