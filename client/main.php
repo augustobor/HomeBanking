@@ -39,9 +39,11 @@
 
         <section>
             <h2>Ultimos movimientos</h2>
-            <?php
-                include('./controller/ultimos_movimientos.php');
-            ?>
+            <div class='transferencias-display'>
+                <?php
+                    include('./controller/ultimos_movimientos.php');
+                ?>
+            </div>
         </section>
     </main>
     <script src='./lista.js'></script>

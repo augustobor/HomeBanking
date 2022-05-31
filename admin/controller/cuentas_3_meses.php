@@ -7,12 +7,13 @@
     } else {
 
             //Revisar
-            $resultado = mysqli_query($conexion, "SELECT id_cuenta_origen, monto, tipo ,MAX(transacciones.fecha_hora), alias, timestampdiff(month, transacciones.fecha_hora, NOW()) AS diferencia 
-            FROM transacciones INNER JOIN cuentas ON transacciones.id_cuenta_origen = cuentas.id_usuario
-            WHERE timestampdiff(month, transacciones.fecha_hora, NOW()) >= 0 AND tipo='transferencia' 
-            ORDER BY id_cuenta_origen;");
+                $resultado = mysqli_query($conexion, "SELECT id_cuenta_origen, monto, tipo, cuentas.fecha_hora, alias, timestampdiff(month, cuentas.fecha_hora, NOW()) AS diferencia 
+                FROM transacciones INNER JOIN cuentas ON transacciones.id_cuenta_origen = cuentas.id_usuario
+                WHERE timestampdiff(month, cuentas.fecha_hora, NOW()) >= 3 
+                AND tipo='transferencia'
+                GROUP BY id_cuenta_origen;");
 
-            if($resultado->num_rows != 0) {
+            if($resultado->num_rows > 0) {
 
                 echo "<h1>Cuentas que no tienen movimientos hace más de 3 meses</h1>";
                 
@@ -24,7 +25,7 @@
                     <article class="cuenta">
                         <p>Alias de la cuenta: <?php echo $fila["alias"]?></p>
                         <p>Monto: $<?php echo $fila["monto"]?></p>
-                        <p>Ultimo movimiento el <?php echo $fila["MAX(transacciones.fecha_hora)"]?> (Hace <?php echo $fila['diferencia']?> meses) </p>
+                        <p>Ultimo movimiento el <?php echo $fila['fecha_hora'] ?> (hace <?php echo $fila['diferencia']?> meses)</p>
                     </article>     
                 <?php
                 }

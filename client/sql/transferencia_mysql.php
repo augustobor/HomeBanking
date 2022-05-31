@@ -76,9 +76,16 @@
                                 $resultado_insertar_transferencia = mysqli_query($conexion, "INSERT INTO transacciones (id_cuenta_origen, id_cuenta_destino, tipo , monto, fecha_hora) 
                                 VALUES ('" . $id_origen . "', '" . $id_destino . "', 'transferencia' , '" . $_POST['cash'] . "', NOW())");
                                 
+
+                                //Actualizar la fecha de la cuenta
+                                $resultado_update_ultima_fecha =  mysqli_query($conexion, "UPDATE cuentas 
+                                SET fecha_hora = NOW() 
+                                WHERE alias = '" . $_POST['origin'] . "'");
+
                                 if($resultado_update_origin && 
                                     $resultado_update_destino && 
-                                    $resultado_insertar_transferencia) {
+                                    $resultado_insertar_transferencia && 
+                                    $resultado_update_ultima_fecha) {
 
                                     $_SESSION['sucess'] = "Transferencia realizada";
                                     $conexion -> commit();
