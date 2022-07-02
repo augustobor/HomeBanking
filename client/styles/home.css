@@ -119,7 +119,7 @@ main .cuenta h3 {
 
 main .transaccion {
     background-color: #3484a9;
-    width: auto;
+    width: 80%;
     margin: 2%;
     padding: 1%;
     color: var(--lazy-white);

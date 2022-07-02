@@ -18,28 +18,33 @@
                         <p>Monto: $<?php echo $fila["saldo"]?></p>
 
                         <?php
-                        
-                        $sql = "SELECT alias, nombre, saldo , id_usuario, id_cuenta_destino, tipo, transacciones.fecha_hora
+                          
+                        $resultado_transferencia = mysqli_query($conexion, "SELECT alias, nombre, saldo , id_usuario, id_cuenta_destino, tipo, transacciones.fecha_hora
                         FROM cuentas INNER JOIN transacciones ON cuentas.id_usuario = transacciones.id_cuenta_origen
-                        WHERE id_usuario = '" . $_SESSION['user_id'] . "' AND tipo = 'transferencia'";
-                        
-                        $resultado = mysqli_query($conexion, $sql);
+                        WHERE id_usuario = '" . $_SESSION['user_id'] . " AND alias = ". $fila['alias'] ."' AND tipo = 'transferencia'");
 
-                        if($resultado->num_rows > 0) {
+                        if($resultado_transferencia->num_rows > 0) {
 
                             echo "<div class='transferencias'>";
-                            while($fila = mysqli_fetch_array($resultado)) {
+                            while($fila_transferencia = mysqli_fetch_array($resultado_transferencia)) {
                                 ?>
                                 <article class="transferencia">
                                     <p>Alias: <?php echo $fila["alias"]?></p>
-                                    <p>Nombre de la cuenta: <?php echo $fila["nombre"]?></p>
-                                    <p>Monto: $<?php echo $fila["saldo"]?></p>
-                                    <p>Fecha: <?php echo $fila["fecha_hora"]?></p>
+                                    <p>Nombre de la cuenta emisora: <?php echo $fila_transferencia["nombre"]?></p>
+                                    <p>Monto del emisor: $<?php echo $fila_transferencia["saldo"]?></p>
+                           
+                                <?php
+                                $fila_transferencia = mysqli_fetch_array($resultado_transferencia);
+                                ?>
+                                    <p>Nombre de la cuenta receptora: <?php echo $fila_transferencia["nombre"]?></p>
+                                    <p>Monto del receptor: $<?php echo $fila_transferencia["saldo"]?></p>
+                                    <p>Fecha: <?php echo $fila_transferencia["fecha_hora"]?></p>
                                 </article>
                                 <?php
                             }
                             echo "</div>";
                         } else {
+                            
                         }
 
                     ?>

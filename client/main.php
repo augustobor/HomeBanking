@@ -22,7 +22,7 @@
     
     <menu>
         <ul>
-            <li><a href="../index.php">Volver</a></li>
+            <li><a href="../index.php">Salir</a></li>
             <li><a href="./transferencia.php">Transferir</a></li>
         </ul>
     </menu>

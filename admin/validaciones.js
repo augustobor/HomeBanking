@@ -2,7 +2,8 @@ function isPass(pass) {
 
     var isPass = false;
     var isPassNum = false;
-    var isPassAlpha = false;
+    var isPassAlphaUpper = false;
+    var isPassAlphaLower = false;
     var isPassSpecial = false;
 
     let passArray = pass.split("");
@@ -12,8 +13,12 @@ function isPass(pass) {
             isPassNum = true;
         }
 
-        if(character.match(/[A-Za-z]/)) {
-            isPassAlpha = true;
+        if(character.match(/[A-Z]/)) {
+            isPassAlphaUpper = true;
+        }
+
+        if(character.match(/[a-z]/)) {
+            isPassAlphaLower = true;
         }
 
         if(character.match(/["!@#$%&*()_+-=?¿¡]/)) {
@@ -22,40 +27,13 @@ function isPass(pass) {
         
     });
 
-    if(isPassAlpha && (isPassNum || isPassSpecial)) {
+    if(isPassAlphaUpper && isPassAlphaLower && (isPassNum || isPassSpecial)) {
         isPass = true;
     }
 
     return isPass;
 }
 
-
-function isUser(user) {
-
-    var usuario = false;
-    var isUserNum = false;
-    var isUserAlpha = false;
-
-    let userArray = user.split("");
-
-    userArray.forEach(character => {
-
-        if(character.match(/[0-9]/)) {
-            isUserNum = true;
-        }
-
-        if(character.match(/[A-Za-z]/)) {
-            isUserAlpha = true;
-        }
-
-    });
-
-    if(isUserNum && isUserAlpha) {
-        usuario = true;
-    }
-
-    return usuario;
-}
 
 function validar_cliente() {
 
@@ -68,6 +46,7 @@ function validar_cliente() {
 
     const dniRegex = "^[0-9]*$";
     const nameRegex = "^[A-Za-z]+$";
+    const userRegex = "^[A-Za-z0-9]*$";
 
     if(name.length == 0 || surname.length == 0) {
         alert("El nombre y apellido son obligatorios");
@@ -84,12 +63,12 @@ function validar_cliente() {
 
             if ((user.length < 6) || (pass.length < 6)) {
 
-                alert("El nombre y la contraseña deben tener al menos 6 caracteres");
+                alert("El nombre de usuario y la contraseña deben tener al menos 6 caracteres");
                 return false;
 
             } else {
 
-                if(!isUser(user)) {
+                if(!user.match(userRegex)) {
 
                         alert("El nombre de usuario debe contener letras y/o un numeros");
                         return false;
@@ -98,7 +77,7 @@ function validar_cliente() {
 
                         if(!isPass(pass)) {
                             
-                            alert("La contraseña debe contener letras y un numeros o caracteres especiales");
+                            alert("La contraseña debe contener mayúsculas, minúsculas y numeros o caracteres especiales");
                             return false;
 
                         } else {

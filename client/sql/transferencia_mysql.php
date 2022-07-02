@@ -31,7 +31,9 @@
                         FROM cuentas 
                         where alias = '" . $_POST['origin'] . "'");
 
-                        
+                        $resultado = mysqli_fetch_array($resultado)['saldo'];
+
+
                         if($_POST['cash'] <= $resultado) {
 
 
@@ -102,7 +104,7 @@
                         $_SESSION['error'] = "El monto debe ser mayor a 0";
                     }
                 } else {
-                    $_SESSION['error'] = "No existe la cuenta destino";
+                    $_SESSION['error'] = "No existe el alias de     la cuenta destino";
                     }
 
             } else {

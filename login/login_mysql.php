@@ -19,20 +19,30 @@
                         
                         if($resultado->num_rows > 0) {
 
+                            
                             $filas = mysqli_fetch_array($resultado);
                             
                             $_SESSION['user'] = $filas['nombre'];
                             $_SESSION['user_id'] = $filas['id'];
 
-                            if($filas['tipo'] == 'empleado') {
+                            if($filas['cambio_clave'] == 1) {
 
-                                header("Location: ../admin/admin.php");
+                                header("Location: ../cambio_clave/cambio_clave.php");
                                 die();
 
                             } else {
 
-                                header("Location: ../client/main.php");
-                                die();
+
+                                if($filas['tipo'] == 'empleado') {
+
+                                    header("Location: ../admin/admin.php");
+                                    die();
+
+                                } else {
+
+                                    header("Location: ../client/main.php");
+                                    die();
+                                }
                             }
 
                         } else {

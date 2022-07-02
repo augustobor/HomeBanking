@@ -22,11 +22,13 @@
             <hr/>
             <input class="submit" type="submit" value="Crear cuenta"/>      
             
-            <?php
-                include('../error.php');
-            ?>
         </form>
         <a href="./admin.php">Volver</a>
+
+        <?php
+            include('../error.php');
+        ?>
+
     </main>
     <script src="./validaciones.js"></script>
 </body>

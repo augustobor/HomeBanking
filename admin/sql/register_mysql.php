@@ -3,16 +3,25 @@
     function validar_pass($pass) {
     
         $isPass = false;
-        $isPassAlpha = false;
+        $isPassAlphaUpper = false;
+        $isPassAlphaLower = false;
         $isPassNum = false;
         $isPassSpecial = false;
 
         for ($i = 0; $i < strlen($pass); $i++) {
 
-            if (!preg_match('/[A-Za-z]/', $pass[$i])) {
-                $isPassAlpha = true;
+            if (!preg_match('/[A-Z]/', $pass[$i])) {
+                $isPassAlphaUpper = true;
+            }
+
+            if (!preg_match('/[a-z]/', $pass[$i])) {
+                $isPassAlphaLower = true;
             }
             
+            if (!preg_match('/[a-z]/', $pass[$i])) {
+                $isPassNum = true;
+            }
+
             if (!preg_match('/[0-9]/', $pass[$i])) {
                 $isPassNum = true;
             }
@@ -22,7 +31,7 @@
             }
         }
 
-        if($isPassAlpha && ($isPassNum || $isPassSpecial)) {
+        if($isPassAlphaUpper && $isPassAlphaLower && ($isPassNum || $isPassSpecial)) {
             $isPass = true;
         }
 
