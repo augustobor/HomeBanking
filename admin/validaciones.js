@@ -70,7 +70,7 @@ function validar_cliente() {
 
                 if(!user.match(userRegex)) {
 
-                        alert("El nombre de usuario debe contener letras y/o un numeros");
+                        alert("El nombre de usuario debe contener caracteres alfanuméricos");
                         return false;
 
                     } else {

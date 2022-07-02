@@ -1,6 +1,8 @@
 <?php   
 
-    include("../conexion.php");
+    require("./autentificacion_class.php");
+
+    require("../conexion.php");
 
     if($conexion->connect_errno) {
         die("La conexión falló" . $conexion->connect_errno);
@@ -8,56 +10,34 @@
 
         session_start();
         if(!empty($_POST)) {    
-            
-            if ((strlen($_POST['user']) > 6) && (strlen($_POST['password']) > 6)) {
 
-                    if(preg_match('/^[A-Za-z0-9]*$/', $_POST['user'])) {
+        
+            $autentificacion = new autentificacion_class();
 
-                        $sql = "SELECT * FROM usuarios WHERE nombre_usuario = '" . $_POST['user'] . "' AND clave = '" . $_POST['password'] . "'";
+            if($autentificacion->validar_login()) {
 
-                        $resultado = mysqli_query($conexion, $sql);
-                        
-                        if($resultado->num_rows > 0) {
+                if($_SESSION['cambio_clave'] == 1) {
 
-                            
-                            $filas = mysqli_fetch_array($resultado);
-                            
-                            $_SESSION['user'] = $filas['nombre'];
-                            $_SESSION['user_id'] = $filas['id'];
+                    header("Location: ../cambio_clave/cambio_clave.php");
+                    die();
 
-                            if($filas['cambio_clave'] == 1) {
-
-                                header("Location: ../cambio_clave/cambio_clave.php");
-                                die();
-
-                            } else {
+                } else {
 
 
-                                if($filas['tipo'] == 'empleado') {
+                    if($_SESSION['tipo'] == 'empleado') {
 
-                                    header("Location: ../admin/admin.php");
-                                    die();
-
-                                } else {
-
-                                    header("Location: ../client/main.php");
-                                    die();
-                                }
-                            }
-
-                        } else {
-                            $_SESSION['error'] = "Usuario o contraseña incorrectos";
-                        }
+                        header("Location: ../admin/admin.php");
+                        die();
 
                     } else {
-                        $_SESSION['error'] = "El usuario debe tener solo numeros y/o letras";
-                    }
-                    
-            } else {
-                $_SESSION['error'] = "El usuario o contraseña no cuentan con más de 6 caracteres";
-            }
 
-        }
+                        header("Location: ../client/main.php");
+                        die();
+                    }
+                }
+
+            }
+        } 
         
         header("Location: ../index.php");
         

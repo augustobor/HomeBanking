@@ -4,7 +4,7 @@ function validar() {
     const pass = document.getElementById("pass").value; 
     const pass2 = document.getElementById("pass2").value;
 
-    if(pass.length < 6) {
+    if((pass.length < 6) && (pass2.length < 6)) {
         alert("La contraseña debe tener al menos 6 caracteres");
         return false;
     } else {

@@ -8,7 +8,7 @@ function validar() {
         return false;
     } else {
         if(!user.match(regex)) {
-                alert("El nombre de usuario debe contener letras y/o un numeros");
+                alert("El nombre de usuario solo debe contener caracteres alfanuméricos");
                 return false;
         } 
     }

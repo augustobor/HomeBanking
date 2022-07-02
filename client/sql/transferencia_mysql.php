@@ -64,20 +64,22 @@
                                 FROM cuentas 
                                 where alias = '" . $_POST['origin'] . "'");
 
-                                $id_origen = mysqli_fetch_array($resultado)['id_usuario'];
+                                $id_origen = mysqli_fetch_array($resultado)['id'];
 
 
                                 $resultado = mysqli_query($conexion, "SELECT * 
                                 FROM cuentas where alias = '" . $_POST['destiny'] . "'");
 
-                                $id_destino = mysqli_fetch_array($resultado)['id_usuario'];
+                                $id_destino = mysqli_fetch_array($resultado)['id'];
 
                                 //Fin de obtener las variables de insert
                             
+                                mysqli_query($conexion, "SET foreign_key_checks = 0");
 
                                 $resultado_insertar_transferencia = mysqli_query($conexion, "INSERT INTO transacciones (id_cuenta_origen, id_cuenta_destino, tipo , monto, fecha_hora) 
                                 VALUES ('" . $id_origen . "', '" . $id_destino . "', 'transferencia' , '" . $_POST['cash'] . "', NOW())");
                                 
+                                mysqli_query($conexion, "SET foreign_key_checks = 1");
 
                                 //Actualizar la fecha de la cuenta
                                 $resultado_update_ultima_fecha =  mysqli_query($conexion, "UPDATE cuentas 

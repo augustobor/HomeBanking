@@ -19,8 +19,7 @@
 
                 $sql = "SELECT cuentas.fecha_hora 
                         FROM transacciones INNER JOIN cuentas ON transacciones.id_cuenta_origen = cuentas.id_usuario
-                        WHERE timestampdiff(month, cuentas.fecha_hora, NOW()) >= 3 
-                        AND tipo='transferencia'
+                        WHERE timestampdiff(month, cuentas.fecha_hora, NOW()) > 3 
                         AND alias = '" . $_POST['destiny'] . "';";
 
                 $resultado = mysqli_query($conexion, $sql);

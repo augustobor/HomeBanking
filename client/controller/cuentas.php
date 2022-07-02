@@ -19,27 +19,26 @@
 
                         <?php
                           
-                        $resultado_transferencia = mysqli_query($conexion, "SELECT alias, nombre, saldo , id_usuario, id_cuenta_destino, tipo, transacciones.fecha_hora
-                        FROM cuentas INNER JOIN transacciones ON cuentas.id_usuario = transacciones.id_cuenta_origen
-                        WHERE id_usuario = '" . $_SESSION['user_id'] . " AND alias = ". $fila['alias'] ."' AND tipo = 'transferencia'");
+                        $resultado_transferencia = mysqli_query($conexion, "SELECT tipo, monto, transacciones.fecha_hora as fecha_hora, alias, saldo, id_cuenta_origen, id_cuenta_destino 
+                        FROM transacciones INNER JOIN cuentas ON cuentas.id = transacciones.id_cuenta_origen 
+                        WHERE (id_cuenta_origen='" . $fila['id'] . "' OR id_cuenta_destino='" . $fila['id'] . "') AND tipo='transferencia'");
 
                         if($resultado_transferencia->num_rows > 0) {
 
+
                             echo "<div class='transferencias'>";
                             while($fila_transferencia = mysqli_fetch_array($resultado_transferencia)) {
+                                
+                                $resultado_destino = mysqli_query($conexion, "SELECT alias FROM cuentas WHERE id = '" . $fila_transferencia['id_cuenta_destino'] . "'");
+
+                                $alias_destino = mysqli_fetch_array($resultado_destino);
+
                                 ?>
                                 <article class="transferencia">
-                                    <p>Alias: <?php echo $fila["alias"]?></p>
-                                    <p>Nombre de la cuenta emisora: <?php echo $fila_transferencia["nombre"]?></p>
-                                    <p>Monto del emisor: $<?php echo $fila_transferencia["saldo"]?></p>
-                           
-                                <?php
-                                $fila_transferencia = mysqli_fetch_array($resultado_transferencia);
-                                ?>
-                                    <p>Nombre de la cuenta receptora: <?php echo $fila_transferencia["nombre"]?></p>
-                                    <p>Monto del receptor: $<?php echo $fila_transferencia["saldo"]?></p>
-                                    <p>Fecha: <?php echo $fila_transferencia["fecha_hora"]?></p>
-                                </article>
+                                    <p>Alias de la cuenta emisora: <?php echo $fila_transferencia["alias"]?></p>
+                                    <p>Monto del emisor: $<?php echo $fila_transferencia["monto"]?></p>
+                                    <p>Monto final: $<?php echo $fila_transferencia["saldo"]?></p>
+                                    <p>Alias de la cuenta receptora: <?php echo $alias_destino["alias"]?></p>
                                 <?php
                             }
                             echo "</div>";
@@ -54,9 +53,9 @@
                 <?php
             }
         } else {                 
-            $_SESSION['error'] = "No tienes cuentas";
+            $_SESSION['mensaje'] = "No tienes cuentas";
             ?>
-            <p class="cuenta"><?php echo $_SESSION['error']?></p>
+            <p class="cuenta"><?php echo $_SESSION['mensaje']?></p>
             <?php
         }
     }

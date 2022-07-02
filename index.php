@@ -8,6 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="icon" href="./favicon.ico">
+
     <link rel="stylesheet" type="text/css" href="./login/styles/style.css">
     <link rel="stylesheet" type="text/css" href="./login/styles/tablet.css" media="screen and (min-width: 680px)">
     <link rel="stylesheet" type="text/css" href="./login/styles/desktop.css" media="screen and (min-width: 1000px)"> 
