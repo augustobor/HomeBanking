@@ -9,7 +9,7 @@
 
         $numero = 1;
 
-        $sql = "SELECT * FROM transacciones WHERE id_cuenta_origen = '" . $id['id'] . "' ORDER BY fecha_hora DESC LIMIT 5";
+        $sql = "SELECT * FROM transacciones WHERE (id_cuenta_origen='" . $id['id'] . "' OR id_cuenta_destino='" . $id['id'] . "') ORDER BY fecha_hora DESC LIMIT 5";
 
         $resultado = mysqli_query($conexion, $sql);
 

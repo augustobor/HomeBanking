@@ -14,7 +14,7 @@
         
             $autentificacion = new autentificacion_class();
 
-            if($autentificacion->validar_login()) {
+            if($autentificacion->validar_login()) { 
 
                 if($_SESSION['cambio_clave'] == 1) {
 

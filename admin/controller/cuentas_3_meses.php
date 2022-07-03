@@ -6,10 +6,9 @@
         die("La conexión falló" . $conexion->connect_errno);
     } else {
 
-            //Revisar
-                $resultado = mysqli_query($conexion, "SELECT id_cuenta_origen, monto, tipo, cuentas.fecha_hora, alias, timestampdiff(month, cuentas.fecha_hora, NOW()) AS diferencia 
-                FROM transacciones INNER JOIN cuentas ON transacciones.id_cuenta_origen = cuentas.id_usuario
-                WHERE timestampdiff(month, cuentas.fecha_hora, NOW()) >= 3 
+            $resultado = mysqli_query($conexion, "SELECT id_cuenta_origen, monto, tipo, cuentas.fecha_hora, alias, timestampdiff(month, cuentas.fecha_hora, NOW()) AS diferencia 
+                FROM transacciones INNER JOIN cuentas ON transacciones.id_cuenta_origen = cuentas.id
+                WHERE timestampdiff(month, cuentas.fecha_hora, NOW()) > 3 
                 AND tipo='transferencia'
                 GROUP BY id_cuenta_origen;");
 
@@ -33,7 +32,7 @@
                 echo "</div>";
 
             } else {
-                echo "<h1>No hay cuentas que no tienen movimientos hace más de 3 meses</h1>";
+                echo "<h1>No hay cuentas cuyo último movimiento haya sido hace más de 3 meses</h1>";
             }
                     
            
