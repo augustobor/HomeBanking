@@ -57,7 +57,7 @@
                         
                             if (validar_pass($_POST['password'])) {
 
-                                        if(preg_match('/^[0-9]*$/', $_POST['dni'])) {
+                                        if(preg_match('/^[0-9]*$/', $_POST['dni']) && (strlen($_POST['dni'] > 0))) {
 
                                             if($_POST['password'] == $_POST['password2']) {
 

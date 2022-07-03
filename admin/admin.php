@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require('./validar_admin.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +17,7 @@
 <body>
     <menu>
         <ul>
-            <li><a href="../index.php">Salir</a></li>
+            <li><a href="../salir.php">Salir</a></li>
             <li><a href="./alta_cliente.php">Alta_cliente</a></li>
             <li><a href="./alta_cuenta.php">Alta_cuenta</a></li>
             <li><a href="./depositar.php">Depositar_sueldo</a></li>

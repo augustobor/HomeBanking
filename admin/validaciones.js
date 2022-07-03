@@ -44,7 +44,7 @@ function validar_cliente() {
     const dni = document.getElementById("dni").value;
     const repeatPass = document.getElementById("pass2").value;
 
-    const dniRegex = "^[0-9]*$";
+    const dniRegex = "[0-9]+";
     const nameRegex = "^[A-Za-z]+$";
     const userRegex = "^[A-Za-z0-9]*$";
 
@@ -82,7 +82,7 @@ function validar_cliente() {
 
                         } else {
                             
-                            if(!dni.match(dniRegex)) {
+                            if((!dni.match(dniRegex)) && (dni.length == 0)) {
 
                                 alert("El dni debe contener solo numeros");
                                 return false;

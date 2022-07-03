@@ -1,6 +1,7 @@
 <?php
     session_start();
     include("../conexion.php");
+    require('./validar_cliente.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +25,7 @@
     
     <menu>
         <ul>
-            <li><a href="../index.php">Salir</a></li>
+            <li><a href="../salir.php">Salir</a></li>
             <li><a href="./transferencia.php">Transferir</a></li>
         </ul>
     </menu>

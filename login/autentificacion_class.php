@@ -1,5 +1,6 @@
 <?php
 
+require('login_exception.php');
 
 class autentificacion_class {
 
@@ -12,25 +13,30 @@ class autentificacion_class {
 
             if(preg_match('/^[A-Za-z0-9]*$/', $_POST['user'])) {
 
-                $sql = "SELECT * FROM usuarios WHERE nombre_usuario = '" . $_POST['user'] . "' AND clave = '" . $_POST['password'] . "'";
-
-                $resultado = mysqli_query($conexion, $sql);
                 
-                if($resultado->num_rows > 0) {
+                    $sql = "SELECT * FROM usuarios WHERE nombre_usuario = '" . $_POST['user'] . "' AND clave = '" . $_POST['password'] . "'";
 
+                    $resultado = mysqli_query($conexion, $sql);
+    
                     
-                    $filas = mysqli_fetch_array($resultado);
-                    
-                    $_SESSION['user'] = $filas['nombre'];
-                    $_SESSION['user_id'] = $filas['id'];
-                    $_SESSION['cambio_clave'] = $filas['cambio_clave'];
-                    $_SESSION['tipo'] = $filas['tipo'];
+                    if($resultado->num_rows > 0) {
 
-                    return true;
+                        
+                        $filas = mysqli_fetch_array($resultado);
+                        
+                        $_SESSION['user'] = $filas['nombre'];
+                        $_SESSION['user_id'] = $filas['id'];
+                        $_SESSION['cambio_clave'] = $filas['cambio_clave'];
+                        $_SESSION['tipo'] = $filas['tipo'];
 
-                } else {
-                    $_SESSION['error'] = "Usuario o contraseña incorrectos";
-                }
+                        return true;
+
+                    } else {
+                        
+                        //Excepción cuando el usuario y/o contraseña son incorrectos
+                        $exception = new login_exception();
+                        $_SESSION['error'] = $exception->errorMessage();
+                    }
 
             } else {
                 $_SESSION['error'] = "El usuario debe tener solo numeros y/o letras";

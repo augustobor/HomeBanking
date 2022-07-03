@@ -1,7 +1,7 @@
 <?php
-    $server = "localhost";
+    $server = "localhost:3307";
     $user = "root";
-    $password = "toor";
+    $password = "";
     $db = "home_banking_data_base";
 
     $conexion = new mysqli($server, $user, $password, $db);
