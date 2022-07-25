@@ -24,7 +24,7 @@
 
                 $sql = "SELECT * 
                 FROM transacciones 
-                WHERE id_cuenta_destino = $resultado_id || id_cuenta_origen = $resultado_id";
+                WHERE id_cuenta_destino = $resultado_id OR id_cuenta_origen = $resultado_id";
 
                 $resultado = mysqli_query($conexion, $sql);
 
@@ -34,7 +34,7 @@
 
                     $sql = "SELECT fecha_hora 
                         FROM cuentas
-                        WHERE timestampdiff(month, fecha_hora, NOW()) >= 0 
+                        WHERE timestampdiff(month, fecha_hora, NOW()) >= 3 
                         AND alias = '" . $_POST['destiny'] . "';";
 
                     $resultado = mysqli_query($conexion, $sql);

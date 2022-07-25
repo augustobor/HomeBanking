@@ -4,9 +4,19 @@
     --dark-vanilla: #7F7C77;
     --black-dark-vanilla: #403e3c;
     --just-white: #FAFAFA;
-    --lazy-white: #E6E1DE;
     --foxy-orange: #FF7F14;
     --washed-cyan: #4F8BA7;
+
+    --good-cyan: #008597;
+    --chill-white: #FCF8EC;
+    --soft-black: #272A2E;
+    --grey-black: #2C3338;
+    --blue-soft-sea: #6191CF;
+    --background-blue: #456268;
+    --grey-blue: #79A3B1; 
+    --clear-blue: #D0E8F2;
+    --nice-grey: #CFD2D4;
+    --lazy-white: #E6E1DE;
 }
 
 * {

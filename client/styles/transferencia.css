@@ -1,96 +1,10 @@
 @import url('../../style/configuration.css');
 
 
-body {
-    display: flex;
-    height: auto;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    background-color: var(--blue-sea);
-}
-
-
-header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
 h1 {
-    font-size: 3rem;
-    color: var(--lazy-white);
-    margin-top: 2rem;
-}
-
-a {
-    text-decoration: none;
-    color: var(--just-white);
-    font-weight: bolder;
-    font-size: xx-large;
-    border-radius: 10px;
-    margin-top: 5rem;
-    padding: 2%;
-}
-
-a:hover {
-    cursor: pointer;
-    color: var(--lazy-white);
-    background-color: var(--washed-cyan);
-    transition: all 200ms ease;
-}
-
-form {
-    padding: 1%;
-    border-radius: 10px;
-    background-color: var(--washed-cyan);
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    margin-top: 9rem;
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-    border-radius: 10px;
+    font-size: 4.8rem;
 }
 
 form input {
-    font-size: large;
-    width: 90%;
-    margin: 5%;
-    padding: 3%;
-    background-color: var(--blue-sea);
-    border-style: none;
-    border-radius: 10px;
-    color: var(--lazy-white);
+    margin: 2%;
 }
-
-form input::placeholder {
-    color: var(--lazy-white);  
-
-}
-
-form .submit {
-    width: 20%;
-    margin: 5%;
-    transition: all 100ms ease-in;
-}
-
-form .submit:hover {
-    cursor: pointer;
-    background-color: var(--dark-beige);
-    transition: all 100ms ease-in; 
-}
-
-.message {
-    width: 100%;
-    background: var(--washed-cyan);
-    padding: 1%;
-    color: var(--just-white);
-    font-weight: bold;
-    font-size: large;
-}
-

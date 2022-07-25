@@ -13,9 +13,8 @@
 
                     ?>
                     <article class="cuenta">
-                        <h3>Alias: <?php echo $fila["alias"]?></h3>
-                        <p>Nombre de la cuenta: <?php echo $fila["nombre"]?></p>
-                        <p>Saldo: $<?php echo $fila["saldo"]?></p>
+                        <p><?php echo $fila["nombre"]?></p>
+                        <p>$<?php echo $fila["saldo"]?></p>
 
                         <?php
                           

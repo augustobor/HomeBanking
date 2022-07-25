@@ -12,7 +12,9 @@
 
     <link rel="icon" href="../favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href= "./styles/home.css">
+    <link rel="stylesheet" type="text/css" href="./styles/home_mobile.css">
+    <link rel="stylesheet" type="text/css" href="./styles/home_tablet.css" media="screen and (min-width: 680px)">
+    <link rel="stylesheet" type="text/css" href="./styles/home.css" media="screen and (min-width: 1000px)"> 
     
     <title>homeBanking | Home</title>
 </head>

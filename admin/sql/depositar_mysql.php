@@ -29,7 +29,6 @@
                     SET saldo = '" . $_POST['amount'] + $monto_anterior ."' 
                     WHERE alias = '" . $_POST['destiny'] . "'");
 
-
                     //Obtenemos la variable id_destino para insertar la transacción.
                     $id_destino = mysqli_fetch_array($resultado_destiny)['id_usuario'];
 

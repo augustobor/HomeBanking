@@ -7,8 +7,6 @@
 
         $id = mysqli_fetch_array(mysqli_query($conexion, $sql));
 
-        $numero = 1;
-
         $sql = "SELECT * FROM transacciones WHERE (id_cuenta_origen='" . $id['id'] . "' OR id_cuenta_destino='" . $id['id'] . "') ORDER BY fecha_hora DESC LIMIT 5";
 
         $resultado = mysqli_query($conexion, $sql);
@@ -22,14 +20,24 @@
             $alias_destino = mysqli_fetch_array($resultado_destino);
         ?>
             <article class="transaccion">
-                <h3><?php echo $numero?></h3>
-                <p>Fecha y hora de la transacción: <?php echo $fila["fecha_hora"]?></p>
-                <p>Monto: $<?php echo $fila["monto"]?></p>
-                <p>alias de la cuenta emisora: <?php echo $alias_origen["alias"]?></p>
-                <p>alias de la cuenta receptora: <?php echo $alias_destino["alias"]?></p>
+                <h3><?php echo $fila["fecha_hora"]?></h3>
+                <?php
+                    if(isset($alias_origen["alias"]) && (isset($alias_destino["alias"])))
+                    {
+                        ?>
+                        <p><?php echo $alias_origen["alias"]?> 
+                        envió $<?php echo $fila["monto"]?>
+                        a <?php echo $alias_destino["alias"]?></p>
+                        <?php
+                    } else {
+                        ?>
+                        <p>Monto: $<?php echo $fila["monto"]?></p>
+                        <?php
+                    }
+                    
+                ?>
             </article>  
         <?php
-        $numero++;
         }
     } else {                 
             $_SESSION['mensaje'] = "No tienes transacciones";

@@ -1,188 +1,39 @@
 @import url('../../style/configuration.css');
 
-body {
-    display: flex;
-    height: auto;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    background: linear-gradient(180.8deg, var(--blue-sea) 16.69%, var(--just-black) 100%);
-}
-
-menu {
-    width: 100%;
-    height: 20%;
-}
-
 menu ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding: 4% 2%;
+    justify-content: space-around;
 }
 
 menu ul li > a {
-    text-decoration: none;
-    color: var(--just-white);
-    font-weight: bolder;
     font-size: xx-large;
-    border-radius: 10px;
-    padding: 20%;
+    padding: 3rem;
 }
 
-menu ul li > a:hover {
-    color: var(--lazy-white);
-    background-color: var(--washed-cyan);
-    transition: all 200ms ease;
-}
 
-main {
-    width: 100%;
-    height: auto;
+main .cuenta {
+    font-size: 4.5rem;
 }
 
 .message {
-    width: 100%;
-    background: var(--washed-cyan);
-    padding: 1%;
-    color: var(--just-white);
-    font-weight: bold;
-    font-size: large;
+    font-size: xx-large;
 }
 
 .success {
-    margin-top: 5rem;
-    border-radius: 10px;
-    width: 30%;
-    background: var(--washed-cyan);
-    padding: 1%;
-    color: var(--just-white);
-    font-weight: bold;
-    font-size: large;
+    font-size: xx-large;
 }
-
 
 main section > div {
-    display: flex;
-    justify-content: center;
-}
-
-main section {
-    padding: 2% 5%;
-    margin: 2% 15%;
-    width: auto;
-    border-width: 0.4rem;
-    border-radius: 10px;
-    padding: 1%;
-    color: var(--just-black);
-    background-color: var(--washed-cyan);
-    font-size: large;
+    margin: 2rem 25rem;
 }
 
 main section h2 {
+    width: 20%;
+}
+
+main .transaccion h3 {
     font-size: xx-large;
-    font-weight: bolder;
-    color: var(--lazy-white);
-    text-align: center;
-    margin: 0% 30%;
-    padding: 1%;
-    border-radius: 10px;
-    background-color: var(--blue-sea);
-    margin-bottom: 10rem;
-}
-
-main .cuenta {
-    background-color: #3484a9;
-    margin: 2% 5%;
-    padding: 2%;
-    color: var(--lazy-white);
-    border-radius: 10px;
-    box-shadow: 0 0 0.1rem 0.1rem var(--blue-sea);
-}
-
-main .cuenta h3 {
-    font-size: xx-large;
-    font-weight: bolder;
-    color: var(--lazy-white);
-    margin-bottom: 5rem;
-    text-align: center;
-}
-
-.transferencias-display {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-}
-
-main .transaccion {
-    background-color: #3484a9;
-    width: 80%;
-    margin: 2%;
-    padding: 1%;
-    color: var(--lazy-white);
-    border-radius: 10px;
-    box-shadow: 0 0 0.1rem 0.1rem var(--blue-sea);
 }
 
 main .transaccion p {
-    font-size: large;
-    font-weight: bolder;
-    margin-top: 1rem;
-}
-
-h4 {
-    font-size: xx-large;
-    font-weight: bolder;
-    color: var(--lazy-white);
-    margin-bottom: 5rem;
-    text-align: center;
-}
-
-.transferencias {
-    overflow: hidden;
-    width: auto;
-    height: 0;
-    transition: all .1s;
-}
-
-.cuenta:hover {
-    background-color: var(--blue-sea);
-    color: var(--lazy-white);
-    transition: all .3s;
-}
-
- .cuenta-transferencia .transferencias {
-    height: auto;
-    background-color: transparent;
-    width: auto;
-    margin: 2%;
-    margin-top: 3rem;
-    padding: 1%;
-    color: var(--lazy-white);
-    border-style: none;
-    border-radius: 10px;
-    transition: all .1s;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.cuenta-transferencia .transferencias .transferencia {
-    background-color: #105372;
-    width: auto;
-    margin: 2%;
-    padding: 2%;
-    color: var(--lazy-white);
-    border-style: none;
-    border-radius: 10px;
-    transition: all .1s;
-}
-
-.cuenta-transferencia .transferencias .transferencia p {
-    font-size: large;
-    font-weight: bolder;
-    margin-top: 1rem;
+    font-size: x-large;
 }

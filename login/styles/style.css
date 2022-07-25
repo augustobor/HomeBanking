@@ -9,12 +9,12 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(180.8deg, var(--blue-sea) 16.69%, var(--just-black) 100%);
+    background: var(--soft-black);
 }
 
 main h1 {
     font-size: 4rem;
-    color: var(--just-white);
+    color: var(--good-cyan);
     margin-top: 5rem;
     margin-bottom: 1rem;
 }
@@ -28,53 +28,42 @@ main form {
 }
 
 main form .login_input {
-    margin-top: 10rem;
+    margin-top: 3rem;
     align-items: center;
     height: 5rem;
-    background: transparent;
+    background: var(--background-blue);
     border-style: none;
     font-size: large;
-    color: var(--just-white);
+    color: var(--nice-grey);
     outline: none;
     transition: all 0.3s ease-in-out;
-    border-bottom: var(--foxy-orange);
+    border-radius: 4px;
 }
-
-
-main form hr {
-    border-width: 0.1rem;
-    border-radius: 10px;
-    border-color: var(--foxy-orange);
-    width: 90%;
-}
-
 
 main form .login_submit {
     margin-top: 5rem;
-    height: 8rem;
-    width: 20rem;
-    background: var(--washed-cyan);
+    height: 5rem;
+    width: 22rem;
+    background: var(--good-cyan);
     border-style: none;
-    border-radius: 10px;
+    border-radius: 4px;
     font-size: x-large;
-    color: var(--just-white);
+    color: var(--chill-white);
     transition: all 0.3s ease-in-out;
 }
 
 main form .login_submit:hover {
-    background: var(--foxy-orange);
+    background: var(--blue-soft-sea);
 }
 
 main form .message {
     width: auto;
     margin-top: 10rem;
-    background: #cd2a2a;
-    border-style: solid;
-    border-width: 0.2rem;
-    border-color: #690808;
+    background: var(--grey-blue);
     border-radius: 10px;
+    width: 22rem;
     padding: 2%;
-    color: var(--just-white);
+    color: var(--chill-white);
     font-weight: bold;
     font-size: large;
 }

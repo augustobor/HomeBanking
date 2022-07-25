@@ -22,9 +22,7 @@
 
         <form action="./login/login_mysql.php" onsubmit="return validar();" class="login" id="login" method="POST">
             <input class="login_input" id="user" type="text" name="user" placeholder="Usuario">
-            <hr/>
             <input class="login_input" id="pass" type="password" name="password" placeholder="Contraseña">
-            <hr/>
             <input class="login_submit" type="submit" value="Iniciar sesión"/>
             
             <?php
