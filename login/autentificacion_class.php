@@ -53,8 +53,6 @@ class autentificacion_class {
 
     public function validar_cambio_contrasenia() {
 
-        require("../conexion.php");
-
         if ((strlen($_POST['password']) >= 6) && (strlen($_POST['password2']) >= 6)) {
 
             if ($_POST['password'] == $_POST['password2']) {
