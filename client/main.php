@@ -19,7 +19,7 @@
     <title>homeBanking | Home</title>
 </head>
 <body>
-    <p class='message'>BIENVENIDO <?php echo $_SESSION['user'];?> 😀!</p>
+    <p class='message'>Bienvenido <?php echo $_SESSION['user'];?> 😀!</p>
     
     <?php
         include('../sucess.php');

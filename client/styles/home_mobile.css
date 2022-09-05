@@ -77,11 +77,12 @@ main section > div {
     padding: 1%;
     color: var(--just-black);
     background-color: var(--grey-black);
-    box-shadow: 2px 2px 1rem var(--just-black);
+    box-shadow: 3px 3px 10px var(--grey-black);
     font-size: large;
 }
 
 main section h2 {
+    width: auto;
     font-size: xx-large;
     color: var(--good-cyan);
     text-align: center;
@@ -89,7 +90,7 @@ main section h2 {
     padding: 4%;
     border-radius: 10px;
     background-color: var(--soft-black);
-    box-shadow: 2px 2px 1rem var(--just-black);
+    box-shadow: 3px 3px 10px #1c1c1c;
     margin-top: 10rem;
     margin-bottom: 2rem;
 }
@@ -98,10 +99,11 @@ main .cuenta {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: var(--soft-black);
     margin: 2%;
     padding: 4%;
+    width: 80%;
     color: var(--grey-blue);
     border-radius: 4px;
     font-size: x-large;

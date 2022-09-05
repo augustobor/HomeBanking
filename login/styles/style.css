@@ -15,7 +15,7 @@ body {
 main h1 {
     font-size: 4rem;
     color: var(--good-cyan);
-    margin-top: 5rem;
+    margin-top: 10rem;
     margin-bottom: 1rem;
 }
 
@@ -36,7 +36,7 @@ main form .login_input {
     font-size: large;
     color: var(--nice-grey);
     outline: none;
-    transition: all 0.3s ease-in-out;
+    transition: all 100ms ease-in-out;
     border-radius: 4px;
 }
 
@@ -54,6 +54,10 @@ main form .login_submit {
 
 main form .login_submit:hover {
     background: var(--blue-soft-sea);
+}
+
+main form .login_input:focus {
+    box-shadow: 0px 0px 5px var(--chill-white);
 }
 
 main form .message {

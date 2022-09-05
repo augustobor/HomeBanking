@@ -35,7 +35,7 @@
         </form>
     </main>
     <aside id="sidebar">
-        <h1>Home Banking</h1>
+        
     </aside>
     <script src="./login/index.js"></script>
 </body>

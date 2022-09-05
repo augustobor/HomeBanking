@@ -1,39 +1,39 @@
 @import url('../../style/configuration.css');
 
+
+
+
+main section {
+    width: 45%;
+    margin: 0 2%;
+}
+
 menu ul {
-    justify-content: space-around;
+    margin: 2%;
 }
 
 menu ul li > a {
     font-size: xx-large;
-    padding: 3rem;
-}
-
-
-main .cuenta {
-    font-size: 4.5rem;
 }
 
 .message {
-    font-size: xx-large;
+    font-size: x-large;
 }
 
 .success {
+    font-size: x-large;
+}
+
+main .cuenta {
     font-size: xx-large;
 }
 
-main section > div {
-    margin: 2rem 25rem;
-}
-
-main section h2 {
-    width: 20%;
+main .transaccion {
+    margin: 2%;
+    padding: 1%;
+    border-radius: 4px;
 }
 
 main .transaccion h3 {
-    font-size: xx-large;
-}
-
-main .transaccion p {
     font-size: x-large;
 }
