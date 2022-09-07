@@ -11,17 +11,17 @@ body {
 }
 
 main {
-    width: 80%;
+    width: 70%;
     height: auto;
 }
 
-main h1 {
+h1 {
     font-size: 5rem;
-    margin-top: 2rem;
-    margin-bottom: 0rem;
+    margin-top: 8rem;
+    margin-bottom: 10rem;
 }
 
-main form {
+form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,46 +30,34 @@ main form {
     padding: 1rem;
 }
 
-main form .login_input {
-    margin-top: 13rem;
-    padding: 2rem;
-    height: 10rem;
-    width: 50rem;
+.login_input {
+    margin-top: 4rem;
+    padding: 1rem;
+    height: 8rem;
+    width: 70%;
     padding: 1rem;
     font-size: x-large;
 }
 
 
-main form hr {
-    width: 40%;
-}
-
-
-main form .login_submit {
+.login_submit {
     height: 8rem;
-    width: 20rem;
-    border-radius: 10px;
+    width: 70%;
     font-size: x-large;
     margin-top: 9rem;
     margin-bottom: 0.9rem;
 }
 
 
+main form .message {
+    width: 70%;
+}
+
+
 aside {
     display: block;
-    background: linear-gradient(180.8deg, var(--dark-vanilla) 16.69%, var(--just-black) 100%);
-    width: calc(100% - 80%);
-    color: var(--just-white);
-    font-size: large;
+    background: var(--background-blue);
+    width: calc(100% - 70%);
+    color: var(--chill-white);
     padding: 2%;
 }
-
-aside h1 {
-    margin-top: 6rem;
-}
-
-aside h2 {
-    margin-top: 3rem;
-    margin-bottom: 20rem;
-}
-

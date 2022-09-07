@@ -1,0 +1,27 @@
+@import url('../../style/configuration.css');
+
+
+h1 {
+    font-size: 3rem;
+    margin-top: 4rem;
+}
+
+a {
+    font-size: xx-large;
+    padding: 2rem;
+}
+
+form {
+    width: 60%;
+    margin: 0 2rem;
+    margin-top: 4rem;
+}
+
+input {
+    font-size: large;
+    margin: 3%;
+}
+
+.submit {
+    margin-top: 4rem;
+}

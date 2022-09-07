@@ -24,6 +24,7 @@
                     if($resultado) {
 
                         $conexion -> commit();
+                        $_SESSION['sucess'] = "Contraseña modificada correctamente. Inicie sesión con su nueva contraseña";
                         header("Location: ../index.php");
                         die();
 

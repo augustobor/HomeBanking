@@ -29,16 +29,19 @@
                     SET saldo = '" . $_POST['amount'] + $monto_anterior ."' 
                     WHERE alias = '" . $_POST['destiny'] . "'");
 
-
                     //Obtenemos la variable id_destino para insertar la transacción.
                     $id_destino = mysqli_fetch_array($resultado_destiny)['id_usuario'];
 
+
+                    mysqli_query($conexion, "SET foreign_key_checks = 0");
 
                     //Agregamos la transaccion a la base de datos
                     $resultado_insertar_transaccion = mysqli_query($conexion, "INSERT INTO transacciones (id_cuenta_origen, 
                     id_cuenta_destino, tipo , monto, fecha_hora) 
                     VALUES ('". $id_destino ."', '" . $id_destino . "', 'deposito' , '" 
                     . $_POST['amount'] . "', NOW())");
+
+                    mysqli_query($conexion, "SET foreign_key_checks = 1");
                     
 
                     if($resultado_update_destino && $resultado_insertar_transaccion) {

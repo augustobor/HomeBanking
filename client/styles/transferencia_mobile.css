@@ -1,0 +1,84 @@
+@import url('../../style/configuration.css');
+
+
+body {
+    height: auto;
+    text-align: center;
+    background-color: var(--grey-black);
+}
+
+
+h1 {
+    font-size: 3rem;
+    color: var(--grey-blue);
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    font-weight: 100;
+}
+
+a {
+    text-decoration: none;
+    color: var(--chill-white);
+    font-size: x-large;
+    border-radius: 8px;
+    background-color: var(--good-cyan);
+    padding: 1rem;
+    transition: all 100ms ease;
+}
+
+a:hover {
+    cursor: pointer;
+    color: var(--chill-white);
+    background-color: var(--grey-blue);
+    transition: all 100ms ease;
+}
+
+form {
+    padding: 1%;
+    background-color: var(--soft-black);
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin: 0 2rem;
+    margin-top: 9rem;
+    display: inline-block;
+    width: auto;
+    border-radius: 6px;
+}
+
+input {
+    font-size: large;
+    width: 90%;
+    margin: 5%;
+    padding: 3%;
+    background-color: var(--background-blue);
+    border-style: none;
+    border-radius: 4px;
+    color: var(--lazy-white);
+}
+
+input::placeholder {
+    color: var(--clear-blue);  
+
+}
+
+.submit {
+    background-color: var(--good-cyan);
+    transition: all 100ms ease-in;
+}
+
+.submit:hover {
+    cursor: pointer;
+    background-color: var(--grey-blue);
+    transition: all 100ms ease-in; 
+}
+
+.message {
+    width: 100%;
+    background: var(--blue-soft-cyan);
+    padding: 1%;
+    color: var(--chill-white);
+    font-size: large;
+}
+

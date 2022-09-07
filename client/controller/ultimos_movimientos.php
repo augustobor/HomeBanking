@@ -1,41 +1,61 @@
 <?php
+    session_start();
     $sql = "SELECT * FROM cuentas WHERE id_usuario = '" . $_SESSION['user_id'] . "'";
     
+    if($conexion->connect_errno) {
+        die("La conexión falló" . $conexion->connect_errno);
+    } else {
 
-    if(($conexion->query($sql))->num_rows > 0) {
-        
+        if(($conexion->query($sql))->num_rows > 0) {
+            
 
-        $id = mysqli_fetch_array(mysqli_query($conexion, $sql));
+            $id = mysqli_fetch_array(mysqli_query($conexion, $sql));
 
-        $numero = 1;
+            $sql = "SELECT * FROM transacciones WHERE (id_cuenta_origen='" . $id['id'] . "' OR id_cuenta_destino='" . $id['id'] . "') ORDER BY fecha_hora DESC LIMIT 5";
 
-        $sql = "SELECT * FROM transacciones WHERE (id_cuenta_origen='" . $id['id'] . "' OR id_cuenta_destino='" . $id['id'] . "') ORDER BY fecha_hora DESC LIMIT 5";
+            $resultado = mysqli_query($conexion, $sql);
 
-        $resultado = mysqli_query($conexion, $sql);
+            if($resultado->num_rows > 0) {
 
-        while($fila = mysqli_fetch_array($resultado)) {
+                while($fila = mysqli_fetch_array($resultado)) {
 
-            $resultado_origen = mysqli_query($conexion, "SELECT alias FROM cuentas WHERE id = '" . $fila["id_cuenta_origen"] . "'");
-            $alias_origen = mysqli_fetch_array($resultado_origen);
+                    $resultado_origen = mysqli_query($conexion, "SELECT alias FROM cuentas WHERE id = '" . $fila["id_cuenta_origen"] . "'");
+                    $alias_origen = mysqli_fetch_array($resultado_origen);
 
-            $resultado_destino=mysqli_query($conexion, "SELECT alias FROM cuentas WHERE id = '" . $fila["id_cuenta_destino"] . "'");
-            $alias_destino = mysqli_fetch_array($resultado_destino);
-        ?>
-            <article class="transaccion">
-                <h3><?php echo $numero?></h3>
-                <p>Fecha y hora de la transacción: <?php echo $fila["fecha_hora"]?></p>
-                <p>Monto: $<?php echo $fila["monto"]?></p>
-                <p>alias de la cuenta emisora: <?php echo $alias_origen["alias"]?></p>
-                <p>alias de la cuenta receptora: <?php echo $alias_destino["alias"]?></p>
-            </article>  
-        <?php
-        $numero++;
-        }
-    } else {                 
+                    $resultado_destino=mysqli_query($conexion, "SELECT alias FROM cuentas WHERE id = '" . $fila["id_cuenta_destino"] . "'");
+                    $alias_destino = mysqli_fetch_array($resultado_destino);
+                ?>
+                    <article class="transaccion">
+                        <h3><?php echo $fila["fecha_hora"]?></h3>
+                        <?php
+                            if(isset($alias_origen["alias"]) && (isset($alias_destino["alias"])))
+                            {
+                                ?>
+                                <p><?php echo $alias_origen["alias"]?> 
+                                envió $<?php echo $fila["monto"]?>
+                                a <?php echo $alias_destino["alias"]?></p>
+                                <?php
+                            } else {
+                                ?>
+                                <p>Monto: $<?php echo $fila["monto"]?></p>
+                                <?php
+                            }
+                            
+                        ?>
+                    </article>  
+                <?php
+                }
+            } else {
+                $_SESSION['mensaje'] = "No tienes transacciones";
+                ?>
+                <p class="cuenta"><?php echo $_SESSION['mensaje']?></p>
+                <?php
+            }
+        } else {                 
             $_SESSION['mensaje'] = "No tienes transacciones";
             ?>
             <p class="cuenta"><?php echo $_SESSION['mensaje']?></p>
             <?php
+        }
     }
-
 ?>

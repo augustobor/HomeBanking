@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require('./validar_admin.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

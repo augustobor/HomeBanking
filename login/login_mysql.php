@@ -23,14 +23,15 @@
 
                 } else {
 
-
                     if($_SESSION['tipo'] == 'empleado') {
 
+                        $_SESSION['esAdmin'] = 1;
                         header("Location: ../admin/admin.php");
                         die();
 
                     } else {
 
+                        $_SESSION['esAdmin'] = 0;
                         header("Location: ../client/main.php");
                         die();
                     }

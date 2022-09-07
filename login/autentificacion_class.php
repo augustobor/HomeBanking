@@ -1,6 +1,6 @@
 <?php
 
-require('./login_exception.php');
+require('login_exception.php');
 
 class autentificacion_class {
 
