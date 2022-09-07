@@ -15,7 +15,7 @@ menu {
     height: 20%;
 }
 
-menu ul {
+ul {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
@@ -24,7 +24,7 @@ menu ul {
     padding: 2%;
 }
 
-menu ul li > a {
+ul a {
     text-decoration: none;
     color: var(--chill-white);
     font-size: x-large;
@@ -34,7 +34,7 @@ menu ul li > a {
     transition: all 100ms ease;
 }
 
-menu ul li > a:hover {
+ul a:hover {
     color: var(--chill-white);
     background-color: var(--grey-blue);
     transition: all 100ms ease;
@@ -64,12 +64,9 @@ main {
 }
 
 
-main section > div {
+main div {
     display: flex;
     justify-content: center;
-}
-
-main section > div {
     padding: 1%;
     margin: 2%;
     width: auto;
@@ -81,7 +78,7 @@ main section > div {
     font-size: large;
 }
 
-main section h2 {
+h2 {
     width: auto;
     font-size: xx-large;
     color: var(--good-cyan);
@@ -95,7 +92,7 @@ main section h2 {
     margin-bottom: 2rem;
 }
 
-main .cuenta {
+.cuenta {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -116,7 +113,7 @@ main .cuenta {
     justify-content: center;
 }
 
-main .transaccion {
+.transaccion {
     background-color: var(--soft-black);
     width: 100%;
     margin: 2%;
@@ -125,7 +122,7 @@ main .transaccion {
     border-radius: 4px;
 }
 
-main .transaccion h3 {
+.transaccion h3 {
     margin-top: 1rem;
     margin-bottom: 4rem;
 }

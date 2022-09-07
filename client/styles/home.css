@@ -8,11 +8,11 @@ main section {
     margin: 0 2%;
 }
 
-menu ul {
+ul {
     margin: 2%;
 }
 
-menu ul li > a {
+ul a {
     font-size: xx-large;
 }
 
@@ -24,16 +24,16 @@ menu ul li > a {
     font-size: x-large;
 }
 
-main .cuenta {
+.cuenta {
     font-size: xx-large;
 }
 
-main .transaccion {
+.transaccion {
     margin: 2%;
     padding: 1%;
     border-radius: 4px;
 }
 
-main .transaccion h3 {
+.transaccion h3 {
     font-size: x-large;
 }

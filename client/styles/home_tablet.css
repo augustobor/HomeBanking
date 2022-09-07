@@ -1,11 +1,11 @@
 @import url('../../style/configuration.css');
 
-menu ul {
+ul {
     justify-content: space-around;
     margin: 2%;
 }
 
-menu ul li > a {
+ul a {
     font-size: x-large;
     padding: 1.5rem;
 }
@@ -24,31 +24,31 @@ main {
     flex-direction: row;
 }
 
-main section {
+section {
     width: 50%;
 }
 
-main section > div {
+main div {
     margin: 2rem;
 }
 
-main section h2 {
+h2 {
     font-size: 3.5rem;
     margin: 2rem 10%;
     padding: 2%;
     margin-top: 3rem;
 }
 
-main .cuenta {
+.cuenta {
     font-size: xx-large;
 }
 
-main .transaccion {
+.transaccion {
     margin: 2%;
     padding: 1%;
     border-radius: 4px;
 }
 
-main .transaccion h3 {
+.transaccion h3 {
     font-size: x-large;
 }

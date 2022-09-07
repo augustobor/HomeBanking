@@ -12,14 +12,14 @@ body {
     background: var(--soft-black);
 }
 
-main h1 {
+h1 {
     font-size: 4rem;
     color: var(--good-cyan);
     margin-top: 10rem;
     margin-bottom: 1rem;
 }
 
-main form {
+form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,20 +27,25 @@ main form {
     margin-top: 1rem;
 }
 
-main form .login_input {
+.login_input {
     margin-top: 3rem;
     align-items: center;
     height: 5rem;
     background: var(--background-blue);
     border-style: none;
     font-size: large;
-    color: var(--nice-grey);
+    color: var(--clear-blue);
     outline: none;
     transition: all 100ms ease-in-out;
     border-radius: 4px;
+    padding: 2%;
 }
 
-main form .login_submit {
+.login_input::placeholder {
+    color: var(--clear-blue);
+}
+
+.login_submit {
     margin-top: 5rem;
     height: 5rem;
     width: 22rem;
@@ -52,11 +57,17 @@ main form .login_submit {
     transition: all 0.3s ease-in-out;
 }
 
-main form .login_submit:hover {
+.login_submit:hover {
     background: var(--blue-soft-sea);
+    cursor: pointer;
 }
 
-main form .login_input:focus {
+.login_submit:active {
+    background-color: var(--background-blue);
+    transition: all 10ms ease-in-out;
+}
+
+.login_input:focus {
     box-shadow: 0px 0px 5px var(--chill-white);
 }
 

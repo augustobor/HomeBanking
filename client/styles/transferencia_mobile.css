@@ -47,7 +47,7 @@ form {
     border-radius: 6px;
 }
 
-form input {
+input {
     font-size: large;
     width: 90%;
     margin: 5%;
@@ -58,17 +58,17 @@ form input {
     color: var(--lazy-white);
 }
 
-form input::placeholder {
+input::placeholder {
     color: var(--clear-blue);  
 
 }
 
-form .submit {
+.submit {
     background-color: var(--good-cyan);
     transition: all 100ms ease-in;
 }
 
-form .submit:hover {
+.submit:hover {
     cursor: pointer;
     background-color: var(--grey-blue);
     transition: all 100ms ease-in; 

@@ -17,11 +17,11 @@ form {
     margin-top: 4rem;
 }
 
-form input {
+input {
     font-size: large;
     margin: 3%;
 }
 
-form .submit {
+.submit {
     margin-top: 4rem;
 }

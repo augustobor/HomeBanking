@@ -11,6 +11,10 @@ form {
     margin-top: 10rem;
 }
 
-form input {
+input {
     margin: 2%;
+}
+
+.submit {
+    font-size: x-large;
 }
