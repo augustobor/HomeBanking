@@ -9,7 +9,11 @@ body {
 
 
 h1 {
+<<<<<<< HEAD
     font-size: 2.5rem;
+=======
+    font-size: 3rem;
+>>>>>>> 9e0a8e9d001795975fc8ba08aa2be952e5db3d9c
     color: var(--grey-blue);
     margin-top: 2rem;
     margin-bottom: 4rem;
@@ -41,7 +45,11 @@ form {
     flex-direction: column;
     height: auto;
     margin: 0 2rem;
+<<<<<<< HEAD
     margin-top: 6rem;
+=======
+    margin-top: 9rem;
+>>>>>>> 9e0a8e9d001795975fc8ba08aa2be952e5db3d9c
     display: inline-block;
     width: auto;
     border-radius: 6px;
@@ -82,6 +90,7 @@ input::placeholder {
     font-size: large;
 }
 
+<<<<<<< HEAD
 main > section {
     display: flex;
     flex-wrap: wrap;
@@ -131,3 +140,5 @@ aside {
     font-size: medium;
     font-weight: bolder;
 }
+=======
+>>>>>>> 9e0a8e9d001795975fc8ba08aa2be952e5db3d9c

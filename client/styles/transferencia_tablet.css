@@ -24,6 +24,7 @@ input {
 
 .submit {
     margin-top: 4rem;
+<<<<<<< HEAD
 }
 
 main > section {
@@ -47,4 +48,6 @@ h2 {
     padding: 2%;
     margin: 2rem 15rem;
     font-size: large;
+=======
+>>>>>>> 9e0a8e9d001795975fc8ba08aa2be952e5db3d9c
 }

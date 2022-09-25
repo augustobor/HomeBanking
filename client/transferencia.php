@@ -19,6 +19,7 @@
     <title>homeBanking | Transferir</title>
 </head>
 <body>
+<<<<<<< HEAD
     
     <main>
         <h2>Mis Cuentas</h2>
@@ -54,5 +55,25 @@
             include('./controller/ultimas_cuentas.php');
         ?>
     </aside>
+=======
+        
+    <form action="./sql/transferencia_mysql.php" method="POST">
+            <input id="origin" type="text" name="origin" placeholder="Alias de cuenta origen">
+
+            <input id="cash" type="number" name="cash" placeholder="Monto">
+
+            <input id="destiny" type="text" name="destiny" placeholder="Alias cuenta destino">
+
+            <input class="submit" type="submit" value="Transferir"/>      
+            
+            <?php
+                include('../error.php');
+            ?>
+    </form>
+
+    <h1>Transfiere de forma segura con nosotros</h1>
+
+    <a href="./main.php">Volver</a>
+>>>>>>> 9e0a8e9d001795975fc8ba08aa2be952e5db3d9c
 </body>
 </html>

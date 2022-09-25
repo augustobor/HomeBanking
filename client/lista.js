@@ -9,4 +9,7 @@ listElements.forEach(listElement => {
     })
 
 })
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9e0a8e9d001795975fc8ba08aa2be952e5db3d9c

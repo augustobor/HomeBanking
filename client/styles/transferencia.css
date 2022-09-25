@@ -1,6 +1,7 @@
 @import url('../../style/configuration.css');
 
 
+<<<<<<< HEAD
 
 body {
     display: flex;
@@ -15,6 +16,8 @@ main {
     width: 80%;
 }
 
+=======
+>>>>>>> 9e0a8e9d001795975fc8ba08aa2be952e5db3d9c
 h1 {
     font-size: 3.5rem;
 }
@@ -22,7 +25,11 @@ h1 {
 form {
     width: 45%;
     margin: 0 2rem;
+<<<<<<< HEAD
     margin-top: 2rem;
+=======
+    margin-top: 10rem;
+>>>>>>> 9e0a8e9d001795975fc8ba08aa2be952e5db3d9c
 }
 
 input {
@@ -32,6 +39,7 @@ input {
 .submit {
     font-size: x-large;
 }
+<<<<<<< HEAD
 
 
 h2 {
@@ -60,3 +68,5 @@ aside {
     margin: 0rem;
     margin-top: 4rem;
 }
+=======
+>>>>>>> 9e0a8e9d001795975fc8ba08aa2be952e5db3d9c
