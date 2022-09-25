@@ -1,0 +1,62 @@
+@import url('../../style/configuration.css');
+
+
+
+body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+}
+
+main {
+    width: 80%;
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+form {
+    width: 45%;
+    margin: 0 2rem;
+    margin-top: 2rem;
+}
+
+input {
+    margin: 2%;
+}
+
+.submit {
+    font-size: x-large;
+}
+
+
+h2 {
+    font-size: 3.5rem;
+}
+
+.cuenta {
+    padding: 3%;
+}
+
+.cuenta p {
+    font-size: large;
+}
+
+aside {
+    display: block;
+    background: var(--background-blue);
+    width: 20%;
+    color: var(--chill-white);
+    padding: 2%;
+    font-size: x-large;
+}
+
+.cuentas_destino {
+    padding: 4%;
+    margin: 0rem;
+    margin-top: 4rem;
+}

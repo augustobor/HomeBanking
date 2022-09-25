@@ -1,0 +1,54 @@
+@import url('../../style/configuration.css');
+
+ul {
+    justify-content: space-around;
+    margin: 2%;
+}
+
+ul a {
+    font-size: x-large;
+    padding: 1.5rem;
+}
+
+.message {
+    font-size: x-large;
+}
+
+.success {
+    font-size: x-large;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+section {
+    width: 50%;
+}
+
+main div {
+    margin: 2rem;
+}
+
+h2 {
+    font-size: 3.5rem;
+    margin: 2rem 10%;
+    padding: 2%;
+    margin-top: 3rem;
+}
+
+.cuenta {
+    font-size: xx-large;
+}
+
+.transaccion {
+    margin: 2%;
+    padding: 1%;
+    border-radius: 4px;
+}
+
+.transaccion h3 {
+    font-size: x-large;
+}

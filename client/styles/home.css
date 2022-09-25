@@ -1,0 +1,39 @@
+@import url('../../style/configuration.css');
+
+
+
+
+main section {
+    width: 45%;
+    margin: 0 2%;
+}
+
+ul {
+    margin: 2%;
+}
+
+ul a {
+    font-size: xx-large;
+}
+
+.message {
+    font-size: x-large;
+}
+
+.success {
+    font-size: x-large;
+}
+
+.cuenta {
+    font-size: xx-large;
+}
+
+.transaccion {
+    margin: 2%;
+    padding: 1%;
+    border-radius: 4px;
+}
+
+.transaccion h3 {
+    font-size: x-large;
+}

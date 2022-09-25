@@ -1,0 +1,24 @@
+:root {
+    --good-cyan: #008597;
+    --chill-white: #FCF8EC;
+    --soft-black: #272A2E;
+    --grey-black: #2C3338;
+    --blue-soft-sea: #6191CF;
+    --background-blue: #456268;
+    --grey-blue: #79A3B1; 
+    --clear-blue: #D0E8F2;
+    --nice-grey: #CFD2D4;
+    --lazy-white: #E6E1DE;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0; 
+}
+
+html {
+	font-size: 62.5%;
+	font-family: 'inherir', 'Seoge UI', sans-serif;
+	scroll-behavior: smooth; 
+}
