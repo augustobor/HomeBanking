@@ -48,6 +48,7 @@ h2 {
 
 aside {
     display: block;
+    margin-top: 0rem;
     background: var(--background-blue);
     width: 20%;
     color: var(--chill-white);
