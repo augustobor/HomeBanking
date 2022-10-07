@@ -16,7 +16,7 @@
 
                 if($_SESSION['cambio_clave'] == 1) {
 
-                    echo "<script> window.location.href='cambio_clave.php'</script>";
+                    echo "<script> window.location.href='../cambio_clave/cambio_clave.php'</script>";
                     die();
 
                 } else {
@@ -24,19 +24,21 @@
                     if($_SESSION['tipo'] == 'empleado') {
 
                         $_SESSION['esAdmin'] = 1;
-                        echo "<script> window.location.href='admin.php'</script>";
+                        echo "<script> window.location.href='../admin/admin.php'</script>";
                         die();
 
                     } else {
 
                         $_SESSION['esAdmin'] = 0;
-                        echo "<script> window.location.href='main.php'</script>";
+                        echo "<script> window.location.href='../client/main.php'</script>";
                         die();
                     }
                 }
 
             }
         } 
-        echo "<script> window.location.href='index.php'</script>";
+        
+        header("Location: ../index.php");
+        
     }
 ?>
