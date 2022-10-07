@@ -1,7 +1,7 @@
 <?php   
+    session_start();
     require("./autentificacion_class.php");
     require("../conexion.php");
-    session_start();
     
     if($conexion->connect_errno) {
         die("La conexión falló" . $conexion->connect_errno);
