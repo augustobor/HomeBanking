@@ -1,10 +1,8 @@
 <?php   
+    require("./autentificacion_class.php");
+    require("../conexion.php");
     session_start();
     
-    require("./autentificacion_class.php");
-
-    require("../conexion.php");
-
     if($conexion->connect_errno) {
         die("La conexión falló" . $conexion->connect_errno);
     } else {
@@ -18,7 +16,7 @@
 
                 if($_SESSION['cambio_clave'] == 1) {
 
-                    header("Location: ../cambio_clave/cambio_clave.php");
+                    echo "<script> window.location.href=cambio_clave.php</script>";
                     die();
 
                 } else {
@@ -26,21 +24,19 @@
                     if($_SESSION['tipo'] == 'empleado') {
 
                         $_SESSION['esAdmin'] = 1;
-                        header("Location: ../admin/admin.php");
+                        echo "<script> window.location.href=admin.php</script>";
                         die();
 
                     } else {
 
                         $_SESSION['esAdmin'] = 0;
-                        header("Location: ../client/main.php");
+                        echo "<script> window.location.href=main.php</script>";
                         die();
                     }
                 }
 
             }
         } 
-        
-        header("Location: ../index.php");
-        
+        echo "<script> window.location.href=index.php</script>";
     }
 ?>
