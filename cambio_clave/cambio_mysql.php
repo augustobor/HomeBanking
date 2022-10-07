@@ -25,7 +25,7 @@
 
                         $conexion -> commit();
                         $_SESSION['sucess'] = "Contraseña modificada correctamente. Inicie sesión con su nueva contraseña";
-                        header("Location: ../index.php");
+                        echo "<script> window.location.href='../index.php'</script>";
                         die();
 
                     } else {
@@ -36,8 +36,7 @@
             }
         
         }
-        
-        header("Location: ../index.php");
-        
+
+        echo "<script> window.location.href='../index.php'</script>";
     }
 ?>

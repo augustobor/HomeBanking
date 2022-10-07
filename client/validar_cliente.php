@@ -1,9 +1,9 @@
 <?php
     if(isset($_SESSION['esAdmin'])) {
         if($_SESSION['esAdmin'] == 1) {
-            header("Location: ../index.php");
+            echo "<script> window.location.href='../index.php'</script>";
         }
     } else {
-        header("Location: ../index.php");
+        echo "<script> window.location.href='../index.php'</script>";
     }
 ?>
