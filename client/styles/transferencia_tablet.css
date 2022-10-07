@@ -1,0 +1,53 @@
+@import url('../../style/configuration.css');
+
+
+h1 {
+    font-size: 3rem;
+    margin-top: 4rem;
+}
+
+a {
+    font-size: xx-large;
+    padding: 2rem;
+}
+
+form {
+    width: 60%;
+    margin: 0 2rem;
+    margin-top: 4rem;
+}
+
+input {
+    font-size: large;
+    margin: 3%;
+}
+
+.submit {
+    margin-top: 4rem;
+<<<<<<< HEAD
+}
+
+main > section {
+    margin: 0 4rem;
+}
+
+h2 {
+    font-size: 3.5rem;
+    margin-top: 3rem;
+}
+
+.cuenta {
+    padding: 4%;
+}
+
+.cuenta p {
+    font-size: medium;
+}
+
+.cuentas_destino {
+    padding: 2%;
+    margin: 2rem 15rem;
+    font-size: large;
+=======
+>>>>>>> 9e0a8e9d001795975fc8ba08aa2be952e5db3d9c
+}

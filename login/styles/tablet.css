@@ -1,0 +1,28 @@
+@import url('../../style/configuration.css');
+
+body {
+    display: block;
+}
+
+
+h1 {
+    font-size: 6rem;
+    margin-top: 10rem;
+    margin-bottom: 6rem;
+}
+
+.login_input {
+    margin-top: 5rem;
+    height: 10rem;
+    font-size: xx-large;
+}
+
+.login_submit {
+    width: 40%;
+    margin-top: 10rem;
+    font-size: xx-large;
+}
+
+
+
+
