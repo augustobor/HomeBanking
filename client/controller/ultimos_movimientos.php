@@ -1,5 +1,4 @@
 <?php
-    session_start();
     $sql = "SELECT * FROM cuentas WHERE id_usuario = '" . $_SESSION['user_id'] . "'";
     
     if($conexion->connect_errno) {
