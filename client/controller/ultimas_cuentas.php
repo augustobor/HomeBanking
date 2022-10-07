@@ -5,10 +5,10 @@
     WHERE id_usuario = '" . $_SESSION['user_id'] . "'";
 
     $resultado = mysqli_query($conexion, $sql);
-
-    $id_cuenta_destino = mysqli_fetch_array($resultado)["id_cuenta_destino"];
     
     if ($resultado->num_rows >   0) {
+
+        $id_cuenta_destino = mysqli_fetch_array($resultado)["id_cuenta_destino"];
 
         $sql = "SELECT id_cuenta_origen
         FROM transacciones INNER JOIN cuentas ON transacciones.id_cuenta_origen = cuentas.id 
