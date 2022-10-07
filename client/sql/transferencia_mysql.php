@@ -40,9 +40,15 @@
                             if($_POST['cash'] <= $resultado) {
 
 
+                                    //Obtengo monto anterior de la cuenta destino
+                                    $resultado = mysqli_query($conexion, "SELECT saldo 
+                                    FROM cuentas 
+                                    where alias = '" . $_POST['destiny'] . "'");
+                                    $monto_destino_anterior = mysqli_fetch_array($resultado)['saldo'];
+
                                     //Actualiza el valor del saldo de la cuenta de destino
                                     $resultado_update_destino = mysqli_query($conexion, "UPDATE cuentas 
-                                    SET saldo = '" . $_POST['cash'] . "' 
+                                    SET saldo = '" . $_POST['cash'] + $monto_destino_anterior . "' 
                                     WHERE alias = '" . $_POST['destiny'] . "'");
 
 

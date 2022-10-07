@@ -28,9 +28,9 @@
             WHERE transacciones.id_cuenta_destino = $fila[id_cuenta_destino]
             group by id_cuenta_destino;";
 
-            $resultado = mysqli_query($conexion, $sql);
+            $resultado2 = mysqli_query($conexion, $sql);
 
-            while($fila2 = mysqli_fetch_array($resultado)) {
+            while($fila2 = mysqli_fetch_array($resultado2)) {
                 ?>
                 <article class="cuentas_destino">
                     <p>Alias: <?php echo $fila2["alias"]?></p>
