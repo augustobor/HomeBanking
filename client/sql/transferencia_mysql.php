@@ -1,12 +1,12 @@
 <?php   
-
+    session_start();
     include("../../conexion.php");
 
     if($conexion->connect_errno) {
         die("La conexión falló" . $conexion->connect_errno);
     } else {
 
-        session_start();
+        
         if(!empty($_POST)) {    
 
             //Validar que ambos alias sean distintos.
@@ -96,7 +96,7 @@
 
                                         $_SESSION['sucess'] = "Transferencia realizada";
                                         $conexion -> commit();
-                                        header("Location: ../main.php");
+                                        echo "<script> window.location.href='../main.php'</script>";
                                         die();
                                     } else {
                                         $conexion -> rollback();
@@ -120,7 +120,7 @@
                     $_SESSION['error'] = "No se pueden realizar transferencias a si mismos";
             }
 
-            header("Location: ../transferencia.php");
+            echo "<script> window.location.href='../transferencia.php'</script>";
         }
     }
 ?>
