@@ -25,9 +25,8 @@
                     
             $sql = "SELECT * 
             FROM transacciones INNER JOIN cuentas ON transacciones.id_cuenta_destino = cuentas.id 
-            WHERE transacciones.id_cuenta_destino = $fila[id_cuenta_destino]
-            group by id_cuenta_destino;";
-
+            WHERE transacciones.id_cuenta_destino = $fila[id_cuenta_destino]";
+    
             $resultado2 = mysqli_query($conexion, $sql);
 
             while($fila2 = mysqli_fetch_array($resultado2)) {
