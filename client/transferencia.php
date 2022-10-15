@@ -16,12 +16,12 @@
 
     <link rel="icon" href="../favicon.ico">
 
-    <title>homeBanking | Transferir</title>
+    <title>homeBanking | Transfer</title>
 </head>
 <body>
     
     <main>
-        <h2>Mis Cuentas</h2>
+        <h2>My accounts</h2>
         <section>
             
              <?php
@@ -30,26 +30,26 @@
 
         </section>
         <form   action="./sql/transferencia_mysql.php" 
-                onsubmit="return confirm('Estás seguro de realizar la transerencia?')" 
+                onsubmit="return confirm('Are you sure to make this transfer?')" 
                 method="POST">
-                <input id="origin" type="text" name="origin" placeholder="Alias de cuenta origen">
+                <input id="origin" type="text" name="origin" placeholder="origin count alias">
 
-                <input id="cash" type="number" name="cash" placeholder="Monto">
+                <input id="cash" type="number" name="cash" placeholder="amount">
 
-                <input id="destiny" type="text" name="destiny" placeholder="Alias cuenta destino">
+                <input id="destiny" type="text" name="destiny" placeholder="destiny count alias">
 
-                <input class="submit" type="submit" value="Transferir"/>      
+                <input class="submit" type="submit" value="Transfer"/>      
                 
                 <?php
                     include('../error.php');
                 ?>
         </form>
 
-        <h1>Transfiere de forma segura con nosotros</h1>
-        <a href="./main.php">Volver</a>
+        <h1>Make secure transfers with us</h1>
+        <a href="./main.php">Go back</a>
     </main>
     <aside id="sidebar">
-        <h2>Cuentas recientes</h2>
+        <h2>recent accounts</h2>
         <?php
             include('./controller/ultimas_cuentas.php');
         ?>

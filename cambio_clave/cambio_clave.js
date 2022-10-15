@@ -1,15 +1,15 @@
-alert("Como es la primera vez que inicias sesión debes crearte una contraseña");
+alert("As it is the first time you log in, you must create a password");
 
 function validar() {
     const pass = document.getElementById("pass").value; 
     const pass2 = document.getElementById("pass2").value;
 
     if((pass.length < 6) && (pass2.length < 6)) {
-        alert("La contraseña debe tener al menos 6 caracteres");
+        alert("Password must have at least 6 characters");
         return false;
     } else {
         if(pass != pass2) {
-            alert("Las contraseñas no coinciden");
+            alert("Passwords don't match");
             return false;
         }
     }

@@ -33,17 +33,16 @@ class autentificacion_class {
 
                     } else {
                         
-                        //Excepción cuando el usuario y/o contraseña son incorrectos
                         $exception = new login_exception();
                         $_SESSION['error'] = $exception->errorMessage();
                     }
 
             } else {
-                $_SESSION['error'] = "El usuario debe tener solo numeros y/o letras";
+                $_SESSION['error'] = "Username must have only numbers and/or letters";
             }
             
         } else {
-            $_SESSION['error'] = "El usuario o contraseña no cuentan con más de 6 caracteres";
+            $_SESSION['error'] = "username or password don't account with more than 6 characters";
         }
 
         return false;
@@ -60,11 +59,11 @@ class autentificacion_class {
                 return true;
                 
             } else {
-                $_SESSION['error'] = "Las contraseñas no coinciden";
+                $_SESSION['error'] = "passwords don't match";
             }
 
         } else {
-            $_SESSION['error'] = "La contraseña no cuentan con más de 6 caracteres";
+            $_SESSION['error'] = "password don't account with more than 6 characters";
         
         }
 

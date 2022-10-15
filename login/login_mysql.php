@@ -4,7 +4,7 @@
     require("../conexion.php");
     
     if($conexion->connect_errno) {
-        die("La conexión falló" . $conexion->connect_errno);
+        die("Conection failed" . $conexion->connect_errno);
     } else {
 
         if(!empty($_POST)) {    

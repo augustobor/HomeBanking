@@ -3,11 +3,11 @@
 class login_exception extends Exception {
 
     public function _construct() {
-        throw new MyException('no existe un usuario con ese nombre de usuario y esa contraseña', 911);
+        throw new MyException('there is no user with that username & that password', 911);
     }
 
     public function errorMessage() {
-        $errorMsg = 'no existe un usuario con ese nombre de usuario y esa contraseña';
+        $errorMsg = 'there is no user with that username & that password';
         return $errorMsg;
     }
 
