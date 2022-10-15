@@ -31,8 +31,8 @@
                             {
                                 ?>
                                 <p><?php echo $alias_origen["alias"]?> 
-                                envió $<?php echo $fila["monto"]?>
-                                a <?php echo $alias_destino["alias"]?></p>
+                                sent $<?php echo $fila["monto"]?>
+                                to <?php echo $alias_destino["alias"]?></p>
                                 <?php
                             } else {
                                 ?>
