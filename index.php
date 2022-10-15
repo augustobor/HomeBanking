@@ -19,12 +19,12 @@
 </head>
 <body>
     <main>
-        <h1>Inicia sesión</h1>
+        <h1>Login session</h1>
 
-        <form action="./login/login_mysql.php" onsubmit="return validar();" class="login" id="login" method="POST">
-            <input class="login_input" id="user" type="text" name="user" placeholder="Usuario">
-            <input class="login_input" id="pass" type="password" name="password" placeholder="Contraseña">
-            <input class="login_submit" type="submit" value="Iniciar sesión"/>
+        <form action="./login/login_mysql.php" onsubmit="return validate();" class="login" id="login" method="POST">
+            <input class="login_input" id="user" type="text" name="user" placeholder="user">
+            <input class="login_input" id="pass" type="password" name="password" placeholder="password">
+            <input class="login_submit" type="submit" value="Login"/>
             
             <?php
                 include('./error.php');
@@ -32,11 +32,15 @@
             <?php
                 include('./sucess.php');
             ?>
+            
+            <p class='message'>
+                user proof: Seba2022 <br/>
+                Pass: MiContra <br/>
+            </p>
 
         </form>
     </main>
     <aside id="sidebar">
-        
     </aside>
     <script src="./login/index.js"></script>
 </body>

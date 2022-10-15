@@ -3,7 +3,7 @@
     include("../../conexion.php");
 
     if($conexion->connect_errno) {
-        die("La conexión falló" . $conexion->connect_errno);
+        die("Connection failed" . $conexion->connect_errno);
     } else {
 
         
@@ -100,30 +100,30 @@
                                         $resultado_insertar_transferencia && 
                                         $resultado_update_ultima_fecha) {
 
-                                        $_SESSION['sucess'] = "Transferencia realizada";
+                                        $_SESSION['sucess'] = "successful transfer";
                                         $conexion -> commit();
                                         echo "<script> window.location.href='../main.php'</script>";
                                         die();
                                     } else {
                                         $conexion -> rollback();
-                                        $_SESSION['error'] = "Error al transferir";
+                                        $_SESSION['error'] = "transfer failed";
                                     }
                             } else {
-                                $_SESSION['error'] = "el monto de la transferencia es mayor al saldo actual";
+                                $_SESSION['error'] = "amount is larger than actually balance";
                             }
                         } else {
-                            $_SESSION['error'] = "El monto debe ser mayor a 0";
+                            $_SESSION['error'] = "amount must be larger than 0";
                         }
                     } else {
-                        $_SESSION['error'] = "No existe el alias de la cuenta destino";
+                        $_SESSION['error'] = "destiny account alias doesn't exist";
                         }
 
                 } else {
-                    $_SESSION['error'] = "Usted no es dueño de la cuenta origen";
+                    $_SESSION['error'] = "you aren't the owner of the origin account";
                 } 
              } else {
 
-                    $_SESSION['error'] = "No se pueden realizar transferencias a si mismos";
+                    $_SESSION['error'] = "They cannot make transfers to themselves";
             }
 
             echo "<script> window.location.href='../transferencia.php'</script>";

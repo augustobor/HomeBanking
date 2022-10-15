@@ -45,13 +45,13 @@
                 <?php
                 }
             } else {
-                $_SESSION['mensaje'] = "No tienes transacciones";
+                $_SESSION['mensaje'] = "You don't have transactions";
                 ?>
                 <p class="cuenta"><?php echo $_SESSION['mensaje']?></p>
                 <?php
             }
         } else {                 
-            $_SESSION['mensaje'] = "No tienes transacciones";
+            $_SESSION['mensaje'] = "You don't have transactions";
             ?>
             <p class="cuenta"><?php echo $_SESSION['mensaje']?></p>
             <?php

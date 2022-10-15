@@ -20,7 +20,7 @@
     <title>homeBanking | Home</title>
 </head>
 <body>
-    <p class='message'>Bienvenido <?php echo $_SESSION['user'];?> 😀!</p>
+    <p class='message'>Welcome <?php echo $_SESSION['user'];?> 😀!</p>
     
     <?php
         include('../sucess.php');
@@ -28,14 +28,14 @@
     
     <menu>
         <ul>
-            <li><a href="../salir.php">Salir</a></li>
-            <li><a href="./transferencia.php">Transferir</a></li>
+            <li><a href="../exit.php">Exit</a></li>
+            <li><a href="./transferencia.php">Transfer</a></li>
         </ul>
     </menu>
     <main>
 
         <section> 
-            <h2>Cuentas</h2>
+            <h2>accounts</h2>
             <div> 
             <?php
                 include('./controller/cuentas.php');
@@ -44,7 +44,7 @@
         </section>
 
         <section>
-            <h2>Ultimos movimientos</h2>
+            <h2>last movements</h2>
             <div class='transferencias-display'>
                 <?php
                     include('./controller/ultimos_movimientos.php');

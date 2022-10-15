@@ -20,7 +20,7 @@
                 <?php
             }
         } else {                 
-            $_SESSION['mensaje_cuentas'] = "No tienes cuentas";
+            $_SESSION['mensaje_cuentas'] = "You don't have accounts";
             ?>
             <p class="cuenta"><?php echo $_SESSION['mensaje_cuentas']?></p>
             <?php
