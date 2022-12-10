@@ -34,7 +34,7 @@
             ?>
             
             <p class='message'>
-                user proof: Seba2022 <br/>
+                user proof: sebaiako2022 <br/>
                 Pass: MiContra2022 <br/>
             </p>
 
