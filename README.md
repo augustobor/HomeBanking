@@ -2,8 +2,6 @@
  
  ## 🏦 Home Banking is a fake home banking website designed to show my skills in php language and sql db management
 
-(image)
-
 ### **This website contains:**
 
 - Login sesion
