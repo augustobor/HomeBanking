@@ -12,7 +12,7 @@
 
 ### **To use correctly this is website is requirment use a proof account. In this case we use the proof account is:**
 
-- username: Seba2022
+- username: sebaiako2022
 - Password: MiContra2022
 
 ## 🧑‍💻 Dev tools
