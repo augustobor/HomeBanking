@@ -1,5 +1,6 @@
 <?php   
     session_start();
+    error_reporting(0);
     require("./autentificacion_class.php");
     require("../conexion.php");
     
