@@ -1,0 +1,17 @@
+{
+  "name": "homebanking",
+  "version": "1.0.0",
+  "description": "### **This website contains:**",
+  "main": "webpack.config.js",
+  "scripts": {
+    "build": "weback --config webpack.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "html-webpack-plugin": "^5.5.2"
+  }
+}
