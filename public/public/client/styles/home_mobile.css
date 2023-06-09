@@ -1,0 +1,147 @@
+@import url('../../style/configuration.css');
+
+body {
+    display: flex;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    background: var(--soft-black);
+}
+
+menu {
+    width: 100%;
+    height: 20%;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 5%;
+    padding: 2%;
+}
+
+ul a {
+    text-decoration: none;
+    color: var(--chill-white);
+    font-size: x-large;
+    border-radius: 8px;
+    background-color: var(--good-cyan);
+    padding: 1rem;
+    transition: all 100ms ease;
+}
+
+ul a:hover {
+    color: var(--chill-white);
+    background-color: var(--grey-blue);
+    transition: all 100ms ease;
+}
+
+main {
+    width: 100%;
+    height: auto;
+}
+
+.message {
+    width: 100%;
+    background: var(--blue-soft-cyan);
+    padding: 1%;
+    color: var(--chill-white);
+    font-size: large;
+}
+
+.success {
+    margin-top: 5rem;
+    border-radius: 10px;
+    width: auto;
+    background: var(--good-cyan);
+    padding: 1%;
+    color: var(--chill-white);
+    font-size: large;
+}
+
+
+main div {
+    display: flex;
+    justify-content: center;
+    padding: 1%;
+    margin: 2%;
+    width: auto;
+    border-radius: 6px;
+    padding: 1%;
+    color: var(--just-black);
+    background-color: var(--grey-black);
+    box-shadow: 3px 3px 10px var(--grey-black);
+    font-size: large;
+}
+
+h2 {
+    width: auto;
+    font-size: xx-large;
+    color: var(--good-cyan);
+    text-align: center;
+    margin: 0% 15%;
+    padding: 4%;
+    border-radius: 10px;
+    background-color: var(--soft-black);
+    box-shadow: 3px 3px 10px #1c1c1c;
+    margin-top: 10rem;
+    margin-bottom: 2rem;
+}
+
+.cuenta {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: var(--soft-black);
+    margin: 2%;
+    padding: 4%;
+    width: 80%;
+    color: var(--grey-blue);
+    border-radius: 4px;
+    font-size: x-large;
+}
+
+.transferencias-display {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.transaccion {
+    background-color: var(--soft-black);
+    width: 100%;
+    margin: 2%;
+    padding: 1%;
+    color: var(--grey-blue);
+    border-radius: 4px;
+}
+
+.transaccion h3 {
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+}
+
+
+main .transaccion p {
+    font-size: large;
+    margin-top: 1rem;
+}
+
+.transferencias {
+    overflow: hidden;
+    width: auto;
+    height: 0;
+    transition: all .1s;
+}
+
+.cuenta:hover {
+    background-color: var(--background-blue);
+    color: var(--lazy-white);
+    transition: all .2s;
+}

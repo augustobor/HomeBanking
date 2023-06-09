@@ -1,0 +1,1 @@
+let listElements=document.querySelectorAll(".cuenta");listElements.forEach((e=>{e.addEventListener("click",(()=>{e.classList.toggle("cuenta-transferencia")}))}));

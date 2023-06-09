@@ -1,0 +1,1 @@
+function validate(){const e=document.getElementById("user").value,a=document.getElementById("pass").value;return e.length<6||a.length<6?(alert("username and password must be have at least 6 characters"),!1):!!e.match("^[A-Za-z0-9]*$")||(alert("username only must have alphanumeric characters"),!1)}

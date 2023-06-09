@@ -1,0 +1,1 @@
+function validar(){const t=document.getElementById("pass").value,e=document.getElementById("pass2").value;return t.length<6&&e.length<6?(alert("Password must have at least 6 characters"),!1):t==e||(alert("Passwords don't match"),!1)}alert("As it is the first time you log in, you must create a password");
